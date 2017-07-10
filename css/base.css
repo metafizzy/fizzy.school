@@ -1,0 +1,51 @@
+html {
+  font-family: Texta, sans-serif;
+  line-height: 1.45;
+  font-size: 20px;
+  background: #333;
+  color: white;
+}
+
+body {
+  background: #444;
+}
+
+/* ---- a ---- */
+
+a {
+  color: #ED0;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #E62;
+}
+
+a:hover {
+  color: #C25;
+}
+
+
+/* ---- pre, code ---- */
+
+pre, code {
+  background: #222;
+  color: white;
+  font-size: 16px;
+}
+
+pre {
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+code {
+  padding: 2px;
+  border-radius: 3px;
+}
+
+pre code {
+  padding: 0;
+  border-radius: 0;
+}

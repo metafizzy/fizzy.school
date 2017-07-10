@@ -1,0 +1,17 @@
+/* duo
+------------------------- */
+
+@media ( min-width: 768px ) {
+  .duo {
+    display: -webkit-box;
+    display: flex;
+  }
+
+  .duo__cell {
+    width: 48%;
+  }
+  
+  .duo__cell:first-child {
+    margin-right: 4%;
+  }
+}

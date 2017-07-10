@@ -1,0 +1,31 @@
+/* syntax highlight
+------------------------- */
+
+code .hl-string,
+code .hl-tag .hl-value { color: #0C4; }
+code .hl-number, /* integer */
+code .hl-cp, /* doctype */
+code .hl-literal { color: #38F; } /*boolean*/
+code .hl-keyword { color: #F73; } /* keyword */
+code .hl-kd, /* storage */
+code .hl-attribute { color: #DC8; } /* markup attribute */
+code .hl-title { color: #9CF; }
+code .hl-params { color: #98D; }
+code .hl-regexp  { color: #FC8; } /* regex */
+code .hl-o  { color: #F63; }   /* operator */
+code .hl-nb { color: #AA97AC;} /* support */
+code .hl-built_in { color: #DD8; }
+
+/* comment */
+code .hl-comment { color: #999; font-style: italic; }
+
+code .hl-tag { color: #6CF; } /* Markup open tag */
+
+code .hl-id { color: #ABC; } /* css id */
+code .hl-class,
+code .hl-selector-class { color: #C95; }  /* CSS class */
+code .hl-rules { color: #FED; }
+code .hl-m  { color: #DE8E50; } /* CSS value */
+code .hl-nd { color: #9FAD7E; } /* CSS pseudo selector */
+code .hl-hexcolor { color: #F63; }
+code .hl-at_rule { color: #088; }

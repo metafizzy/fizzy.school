@@ -1,0 +1,9 @@
+/* lesson-content
+------------------------- */
+
+.lesson-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.lesson-content a { text-decoration: underline; }
