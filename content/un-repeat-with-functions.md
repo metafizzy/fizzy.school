@@ -1,12 +1,12 @@
 ---
-title: Functions condense repeated code
+title: Un-repeat with functions
 layout: page
 ---
 
 <div class="duo code-compare">
   <div class="duo__cell code-compare__nay">
-    <h2>Watch out for</h2>
-    <p>Similar repeated code</p>
+    <h2>Look out for</h2>
+    <p>Similar repeated code.</p>
     ``` js
     // button row 1
     var $buttonRow1 = $('.button-row1');
@@ -40,9 +40,11 @@ layout: page
       $activeButton3.addClass('is-active');
     });
     ```
+    
+    <!-- https://codepen.io/desandro/pen/483afa257e21af6be748a84257562576 -->
   </div>
   <div class="duo__cell code-compare__yay">
-    <h2>The fix</h2>
+    <h2>Solution</h2>
     <p>Use a function to perform same code over multiple things.</p>
     ``` js
     // use .each() to call function for each button row
@@ -59,10 +61,15 @@ layout: page
       });
     });
     ```
+    
+    <!-- https://codepen.io/desandro/pen/c713d68c0d6c21131635d98ac3bf76fb -->
   </div>
 </div>
 
 <!-- html-in-md <div class="lesson-content"> -->
+
+<p data-height="300" data-theme-id="dark" data-slug-hash="c713d68c0d6c21131635d98ac3bf76fb" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="button rows 2" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/c713d68c0d6c21131635d98ac3bf76fb/">button rows 2</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 ## Lesson
 
@@ -116,7 +123,7 @@ Now let's consider a page with multiple button rows.
 
 <div class="button-row button-row2">
   <button class="button is-active">Leonardo</button>
-  <button class="button">Michaelangelo</button>
+  <button class="button">Michelangelo</button>
   <button class="button">Raphael</button>
 </div>
 

@@ -29,3 +29,6 @@ code .hl-m  { color: #DE8E50; } /* CSS value */
 code .hl-nd { color: #9FAD7E; } /* CSS pseudo selector */
 code .hl-hexcolor { color: #F63; }
 code .hl-at_rule { color: #088; }
+
+code .hl-jquery-var { color: #FCC; }
+

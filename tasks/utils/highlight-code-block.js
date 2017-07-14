@@ -5,6 +5,13 @@ highlightjs.configure({
   classPrefix: 'hl-'
 });
 
+var hljsJavaScript = highlightjs.getLanguage('javascript');
+
+hljsJavaScript.contains.push({
+  className: 'jquery-var',
+  begin: /\$\w+/,
+});
+
 var reFirstLine = /.*\n/;
 
 function replaceCodeBlock( match, leadingWhiteSpace, block ) {
