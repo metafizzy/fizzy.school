@@ -1,55 +1,37 @@
 ---
 title: Cache jQuery objects
-layout: page
+layout: lesson
+problemText: Making the same jQuery selections within functions and across code blocks.
+solutionText: Storing jQuery objects as variables so they can be reused.
+problemCode: |
+  $('.gallery-link-list a').click( function( event ) {
+    // make jQuery selections with each click
+    $('.gallery__image').attr( 'src', $(this).attr('href') );
+    $('.gallery__title').text( $(this).text() );
+    $('.gallery__caption').text( $(this).attr('title') );
+  });
+solutionCode: |
+  // get jQuery objects once
+  var $galleryImage = $('.gallery__image');
+  var $galleryTitle = $('.gallery__title');
+  var $galleryCaption = $('.gallery__caption');
+
+  $('.gallery-link-list a').click( function( event ) {
+    // get clicked element
+    var $link = $(this);
+    // use cached jQuery objects
+    $galleryImage.attr( 'src', $link.attr('href') );
+    $galleryTitle.text( $link.text() );
+    $galleryCaption.text( $link.attr('title') );
+  });
+problemCodePen: ac902dc40335678393a2c9aef5356c9b
+solutionCodePen: ff6ee1e664ebd2af70cde44f6f8db6fe
 ---
-
-<div class="duo">
-  <div class="duo__cell">
-    <h2>Look out for</h2>
-    <p>Making the same jQuery selections within functions and across code blocks.</p>
-  </div>
-  <div class="duo__cell">
-    <h2>Solution</h2>
-    <p>Store jQuery objects as variables so they can be reused.</p>
-  </div>
-</div>
-
-<div class="duo code-compare">
-  <div class="duo__cell code-compare__nay">
-    ``` js
-    $('.gallery-link-list a').click( function( event ) {
-      // make jQuery selections with each click
-      $('.gallery\__image').attr( 'src', $(this).attr('href') );
-      $('.gallery\__title').text( $(this).text() );
-      $('.gallery\__caption').text( $(this).attr('title') );
-    });
-    ```
-    <!-- https://codepen.io/desandro/pen/ac902dc40335678393a2c9aef5356c9b -->
-  </div>
-  <div class="duo__cell code-compare__yay">
-    ``` js
-    // get jQuery selections once
-    var $galleryImage = $('.gallery\__image');
-    var $galleryTitle = $('.gallery\__title');
-    var $galleryCaption = $('.gallery\__caption');
-
-    $('.gallery-link-list a').click( function( event ) {
-      // get clicked element
-      var $link = $(this);
-      // use cached jQuery objects
-      $galleryImage.attr( 'src', $link.attr('href') );
-      $galleryTitle.text( $link.text() );
-      $galleryCaption.text( $link.attr('title') );
-    });
-    ```
-    <!-- https://codepen.io/desandro/pen/ff6ee1e664ebd2af70cde44f6f8db6fe -->
-  </div>
-</div>
-
-<!-- html-in-md <div class="lesson-content"> -->
 
 <p data-height="500" data-theme-id="dark" data-slug-hash="ff6ee1e664ebd2af70cde44f6f8db6fe" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="jQuery selections 2" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/ff6ee1e664ebd2af70cde44f6f8db6fe/">jQuery selections 2</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<!-- html-in-md <div class="skinny-column"> -->
 
 ## Benefits
 
@@ -199,6 +181,6 @@ Two things to note:
 
 ## Wrap up
 
-Caching jQuery selections is a powerful practice. Not only does it expose how jQuery works, it can be the first step to opening an even bigger concept: thinking with variables. More on that in the next chapter: State with variables.
+Caching jQuery selections is a powerful practice. Not only does it expose how jQuery works, it can be the first step to opening an even bigger concept: thinking with variables. More on that in the next chapter: [State variables](state-variables).
 
 <!-- html-in-md </div> -->

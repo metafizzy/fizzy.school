@@ -1,0 +1,82 @@
+/* site-header
+------------------------- */
+
+.site-header {
+  padding: 20px 0;
+  background: #222;
+}
+
+.site-header__flexer {
+  display: -webkit-box;
+  display: flex;
+}
+
+.site-header__cell {
+  margin-right: 20px;
+}
+
+.site-header__cell--expand {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+}
+
+.site-header__cell:last-child {
+  margin-right: 0;
+}
+
+.site-header .witchie-logo {
+  width: 100px;
+  height: 100px;
+}
+
+.site-header__title {
+  margin: 0;
+  color: #D26;
+}
+
+.site-header__tagline {
+  margin: 0;
+}
+
+.site-header__link:hover * {
+  color: #19F;
+}
+
+.site-header__sponsor svg {
+  vertical-align: bottom;
+
+}
+
+.site-header__sponsor__brought {
+  display: block;
+  line-height: 1.2;
+}
+
+.site-header .metafizzy-logo {
+  width: 45px;
+  height: 65px;
+}
+
+.site-header .metafizzy-logo__stripe2,
+.site-header .metafizzy-logo__stripe3,
+.site-header .metafizzy-logo__stripe4 {
+  fill: #D26;
+}
+
+.site-header .metafizzy-wordmark {
+  width: 170px;
+  height: 60px;
+
+}
+
+.site-header .metafizzy-wordmark path {
+  fill: #D26;
+}
+
+.site-header a:hover .metafizzy-logo__stripe2 { fill: #E62; }
+.site-header a:hover .metafizzy-logo__stripe3 { fill: #EA0; }
+.site-header a:hover .metafizzy-logo__stripe4 { fill: #19F; }
+
+.site-header a:hover .metafizzy-wordmark path {
+  fill: white;
+}

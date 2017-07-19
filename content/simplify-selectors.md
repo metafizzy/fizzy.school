@@ -1,65 +1,50 @@
 ---
 title: Simplify selectors
-layout: page
+layout: lesson
+problemText: Complicated selectors that concatenate variables and strings.
+solutionText: Using child and filter selecting methods like <code>.find()</code>, <code>.filter()</code>, and <code>.eq()</code>.
+problemCode: |
+  $('.tab-group').each( function( groupIndex ) {
+    var groupNumber = groupIndex + 1;
+    // like '.tab-nav2 li.is-active'
+    var $activeNavItem = $( '.tab-nav' + groupNumber + ' li.is-active' );
+    // like '.tab-content2 .tab.is-active'
+    var $activeTab = $( '.tab-content' + groupNumber + ' .tab.is-active' );
+
+    $( '.tab-nav' + groupNumber ).on( 'click', 'a', function( event ) {
+      // ...
+      // update active tab
+      var tabNumber = $navItem.index() + 1;
+      // like '.tab-content2 .tab1'
+      $activeTab = $( '.tab-content' + groupNumber + ' .tab' + tabNumber );
+      $activeTab.addClass('is-active');
+    });
+  });
+solutionCode: |
+  $('.tab-group').each( function( groupIndex, group ) {
+    // get elements
+    var $group = $( group ); // parent group
+    var $nav = $group.find('.tab-nav'); // select child nav
+    var $activeNavItem = $nav.find('li.is-active'); // select child nav item
+    var $tabs = $group.find('.tab'); // select child tabs
+    var $activeTab = $tabs.filter('.is-active'); // filter for active tab
+
+    $nav.on( 'click', 'a', function( event ) {
+      // ...
+      // update active tab
+      var tabIndex = $navItem.index();
+      $activeTab = $tabs.eq( tabIndex ); // use eq with index
+      $activeTab.addClass('is-active');
+    })
+  });
+problemCodePen: 5847902f662647c3d3356fe87d2087fc
+solutionCodePen: 58617951bab00eee6b4f311963479704
 ---
 
-<div class="duo">
-  <div class="duo__cell">
-    <h2>Look out for</h2>
-    <p>Complicated selectors that concatenate variables and strings.</p>
-  </div>
-  <div class="duo__cell">
-    <h2>Solution</h2>
-    <p>Use child and filter selecting jQuery methods like <code>.find()</code>, <code>.filter()</code>, and <code>.eq()</code>.</p>
-  </div>
-</div>
+<p data-height="500" data-theme-id="dark" data-slug-hash="58617951bab00eee6b4f311963479704" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="three galleries - simplified selectors" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/58617951bab00eee6b4f311963479704/">three galleries - simplified selectors</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-<div class="duo code-compare">
-  <div class="duo__cell code-compare__nay">
-    ``` js
-    $('.tab-group').each( function( groupIndex ) {
-      var groupNumber = groupIndex + 1;
-      // like '.tab-nav2 li.is-active'
-      var $activeNavItem = $( '.tab-nav' + groupNumber + ' li.is-active' );
-      // like '.tab-content2 .tab.is-active'
-      var $activeTab = $( '.tab-content' + groupNumber + ' .tab.is-active' );
-
-      $( '.tab-nav' + groupNumber ).on( 'click', 'a', function( event ) {
-        // ...
-        // update active tab
-        var tabNumber = $navItem.index() + 1;
-        // like '.tab-content2 .tab1'
-        $activeTab = $( '.tab-content' + groupNumber + ' .tab' + tabNumber );
-        $activeTab.addClass('is-active');
-      });
-    });
-    ```
-    <!-- https://codepen.io/desandro/pen/5847902f662647c3d3356fe87d2087fc -->
-  </div>
-  <div class="duo__cell code-compare__yay">
-    ``` js
-    $('.tab-group').each( function( groupIndex, group ) {
-      // get elements
-      var $group = $( group ); // parent group
-      var $nav = $group.find('.tab-nav'); // select child nav
-      var $activeNavItem = $nav.find('li.is-active'); // select child nav item
-      var $tabs = $group.find('.tab'); // select child tabs
-      var $activeTab = $tabs.filter('.is-active'); // filter for active tab
-
-      $nav.on( 'click', 'a', function( event ) {
-        // ...
-        // update active tab
-        var tabIndex = $navItem.index();
-        $activeTab = $tabs.eq( tabIndex ); // use eq with index
-        $activeTab.addClass('is-active');
-      })
-    });
-    ```
-    <!-- https://codepen.io/desandro/pen/58617951bab00eee6b4f311963479704 -->
-  </div>
-</div>
-
-<!-- html-in-md <div class="lesson-content"> -->
+<!-- html-in-md <div class="skinny-column"> -->
 
 ## Benefits
 

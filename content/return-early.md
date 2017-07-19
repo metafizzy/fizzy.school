@@ -1,67 +1,50 @@
 ---
 title: Return early
-layout: page
----
-
-<div class="duo">
-  <div class="duo__cell">
-    <h2>Look out for</h2>
-    <p>Big block of code within a <code>if</code> inside a function</p>
-  </div>
-  <div class="duo__cell">
-    <h2>Solution</h2>
-    <p>Use <code>return</code> to terminate the function early, and move the code out of the conditional to save indentation.</p>
-  </div>
-</div>
-
-<div class="duo code-compare">
-  <div class="duo__cell code-compare__nay">
-    ``` js
-    function getTab( $link ) {
-      var id = $link.attr('data-id');
-      // check if tab exists
-      var $tab = $gallery.find( '#' + id );
-      if ( !$tab.length ) {
-        // create tab if tab does not exist
-        $tab = $( '<div class="gallery\__tab" />', {
-          id: id,
-        });
-        // ...
-      }
-      return $tab;
-    }
-    ```
-    
-    <!-- https://codepen.io/desandro/pen/ec1122e3eae8e58b96dbe975d68db987 -->
-  </div>
-  <div class="duo__cell code-compare__yay">
-    ``` js
-    function getTab( $link ) {
-      var id = $link.attr('data-id');
-      // check if tab exists
-      var $tab = $gallery.find( '#' + id );
-      if ( $tab.length ) {
-        return $tab;
-      }
-
+layout: lesson
+problemText: Big blocks of code within <code>if</code> blocks inside functions.
+solutionText: Using <code>return</code> to terminate the function early and moving the code out of the conditional to save indentation.
+problemCode: |
+  function getTab( $link ) {
+    var id = $link.attr('data-id');
+    // check if tab exists
+    var $tab = $gallery.find( '#' + id );
+    if ( !$tab.length ) {
       // create tab if tab does not exist
-      $tab = $( '<div class="gallery\__tab" />', {
+      $tab = $( '<div class="gallery__tab" />', {
         id: id,
       });
       // ...
+    }
+    return $tab;
+  }
+solutionCode: |
+  function getTab( $link ) {
+    var id = $link.attr('data-id');
+    // check if tab exists
+    var $tab = $gallery.find( '#' + id );
+    if ( $tab.length ) {
       return $tab;
     }
-    ```
-    
-    <!-- https://codepen.io/desandro/pen/c713d68c0d6c21131635d98ac3bf76fb -->
-  </div>
-</div>
 
-<!-- html-in-md <div class="lesson-content"> -->
+    // create tab if tab does not exist
+    $tab = $( '<div class="gallery__tab" />', {
+      id: id,
+    });
+    // ...
+    return $tab;
+  }
+problemCodePen: ec1122e3eae8e58b96dbe975d68db987
+solutionCodePen: 8ea66d113c84f109143e3f0e8ebcf74b
+---
+
+<p data-height="500" data-theme-id="dark" data-slug-hash="8ea66d113c84f109143e3f0e8ebcf74b" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="tab gallery - no early return" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/8ea66d113c84f109143e3f0e8ebcf74b/">tab gallery - no early return</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<!-- html-in-md <div class="skinny-column"> -->
 
 ## Benefits
 
-Readability: removing indentation makes code easier to read
+Readability: removing indentation makes code easier to read and better separates two behaviors.
 
 ## Lesson
 
@@ -80,18 +63,7 @@ function getTab( $link ) {
     $tab = $( '<div class="gallery__tab" />', {
       id: id,
     });
-    // create title
-    var $title = $('<h2 class="gallery__title" />');
-    $title.text( $link.text() );
-    // create image
-    var $image = $( '<img class="gallery__image" />');
-    $image.attr( 'src', $link.attr('href') );
-    // create caption
-    var $caption = $('<p class="gallery__caption" />');
-    $caption.text( $link.attr('title') );
-    // put it all together
-    $tab.append( $title ).append( $image ).append( $caption );
-    $gallery.append( $tab );
+    // ...
   }
   return $tab;
 }
@@ -109,23 +81,12 @@ function getTab( $link ) {
   if ( $tab.length ) {
     return $tab;
   }
-  // all done if $tab exists
+
   // create tab if tab does not exist
   $tab = $( '<div class="gallery__tab" />', {
     id: id,
   });
-  // create title
-  var $title = $('<h2 class="gallery__title" />');
-  $title.text( $link.text() );
-  // create image
-  var $image = $( '<img class="gallery__image" />');
-  $image.attr( 'src', $link.attr('href') );
-  // create caption
-  var $caption = $('<p class="gallery__caption" />');
-  $caption.text( $link.attr('title') );
-  // put it all together
-  $tab.append( $title ).append( $image ).append( $caption );
-  $gallery.append( $tab );
+  // ...
   return $tab;
 }
 ```

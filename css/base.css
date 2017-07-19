@@ -1,19 +1,21 @@
+* { box-sizing: border-box; }
+
 html {
   font-family: Texta, sans-serif;
   line-height: 1.45;
   font-size: 20px;
-  background: #333;
-  color: white;
+  background: #222;
+  color: #F5F5F5;
 }
 
 body {
-  background: #444;
+  background: #333;
 }
 
 /* ---- a ---- */
 
 a {
-  color: #ED0;
+  color: #19F;
   text-decoration: none;
 }
 
@@ -22,7 +24,7 @@ a:visited {
 }
 
 a:hover {
-  color: #C25;
+  color: #D26;
 }
 
 /* ---- headers ---- */
@@ -30,31 +32,27 @@ a:hover {
 h1 {
   font-size: 3.0rem;
   margin: 30px 0;
+  line-height: 1.1;
 }
+
+h1 a { color: #E62; }
+h1 a:visited { color: #D26; }
+h1 a:hover { color: #19F; }
 
 h2 {
   font-size: 2.0rem;
   margin: 60px 0 40px;
-  position: relative;
-  padding-top: 20px;
+  line-height: 1.1;
 }
 
-h2:before {
-  content: '';
-  display: block;
-  position: relative;
-  top: -20px;
-  height: 4px;
-  width: 100%;
-  background: #222;
-  border-radius: 2px;
-}
-
-.duo__cell > h2 {
+.duo__cell > h3:first-child {
   margin: 0 0 20px;
-  
 }
 
+
+h3 {
+  font-size: 1.5rem;
+}
 
 /* ---- hr ---- */
 
@@ -73,9 +71,6 @@ hr:before {
   width: 100%;
   border-radius: 2px;
 }
-
-
-
 
 /* ---- pre, code ---- */
 

@@ -1,0 +1,20 @@
+/* witchie-logo
+------------------------- */
+
+.witchie-logo {
+  background: white;
+  padding: 20px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.witchie-logo__svg {
+  display: block;
+  position: absolute;
+  left: 15%;
+  top: 15%;
+  width: 70%;
+  height: 70%;
+}
+
+.witchie-logo__broom { fill: #E62; }

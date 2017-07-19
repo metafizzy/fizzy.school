@@ -1,54 +1,36 @@
 ---
 title: State variables
-layout: page
+layout: lesson
+problemText: Removing all possible classes an element could have.
+solutionText: Using a variable to store the one thing that is active.
+problemCode: |
+  var $swatchGroup = $('.swatch-group');
+
+  $('.color-button-group button').on( 'click', function() {
+    // remove every possible class
+    $swatchGroup.removeClass('red orange yellow green blue purple');
+    // set color
+    var color = $( this ).text();
+    $swatchGroup.addClass( color );
+  });
+solutionCode: |
+  var $swatchGroup = $('.swatch-group');
+  var selectedColor;
+
+  $('.color-button-group button').on( 'click', function() {
+    // remove only the selected color
+    $swatchGroup.removeClass( selectedColor );
+    // set color
+    selectedColor = $( this ).text();
+    $swatchGroup.addClass( selectedColor );
+  });
+problemCodePen: 938d5487859e2a3810dc9f23e94fd96c
+solutionCodePen: 2c365670c217f7b3266c0c8e7b95d22f
 ---
 
-<div class="duo">
-  <div class="duo__cell">
-    <h2>Look out for</h2>
-    <p>Removing all possible classes an element could have.</p>
-  </div>
-  <div class="duo__cell">
-    <h2>Solution</h2>
-    <p>Use a variable to store the one thing that is active.</p>
-  </div>
-</div>
-
-<div class="duo code-compare">
-  <div class="duo__cell code-compare__nay">
-    ``` js
-    var $swatchGroup = $('.swatch-group');
-
-    $('.color-button-group button').on( 'click', function() {
-      // remove every possible class
-      $swatchGroup.removeClass('red orange yellow green blue purple');
-      // set color
-      var color = $( this ).text();
-      $swatchGroup.addClass( color );
-    });
-    ```
-    <!-- https://codepen.io/desandro/pen/938d5487859e2a3810dc9f23e94fd96c -->
-  </div>
-  <div class="duo__cell code-compare__yay">
-    ``` js
-    var $swatchGroup = $('.swatch-group');
-    var selectedColor;
-
-    $('.color-button-group button').on( 'click', function() {
-      // remove only the selected color
-      $swatchGroup.removeClass( selectedColor );
-      // set color
-      selectedColor = $( this ).text();
-      $swatchGroup.addClass( selectedColor );
-    });
-    ```
-    <!-- https://codepen.io/desandro/pen/2c365670c217f7b3266c0c8e7b95d22f -->
-  </div>
-</div>
-
-<!-- html-in-md <div class="lesson-content"> -->
-
 <p data-height="300" data-theme-id="dark" data-slug-hash="2c365670c217f7b3266c0c8e7b95d22f" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="color buttons 2" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/2c365670c217f7b3266c0c8e7b95d22f/">color buttons 2</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<!-- html-in-md <div class="skinny-column"> -->
 
 ## Benefits
 
@@ -103,11 +85,11 @@ Now this code has no reference to the colors used in the HTML. The HTML colors c
 
 <div class="duo">
   <div class="duo__cell">
-    <h2>Look out for</h2>
+    <h3>Look out for</h3>
     <p>Checking the DOM to determine if an element is selected or active.</p>
   </div>
   <div class="duo__cell">
-    <h2>Solution</h2>
+    <h3>Solution</h3>
     <p>Use a variable to store if something is active.</p>
   </div>
 </div>
@@ -148,7 +130,7 @@ Now this code has no reference to the colors used in the HTML. The HTML colors c
   </div>
 </div>
 
-<!-- html-in-md <div class="lesson-content"> -->
+<!-- html-in-md <div class="skinny-column"> -->
 
 <p data-height="300" data-theme-id="dark" data-slug-hash="8022c4be3775dc75638c8e9997476a9a" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="draggable 2" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/8022c4be3775dc75638c8e9997476a9a/">draggable 2</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>

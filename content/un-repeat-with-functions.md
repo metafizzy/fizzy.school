@@ -1,75 +1,62 @@
 ---
 title: Un-repeat with functions
-layout: page
+layout: lesson
+problemText: Similar repeated code.
+solutionText: Using a function to perform same code over multiple things.
+problemCode: |
+  // button row 1
+  var $buttonRow1 = $('.button-row1');
+  var $activeButton1 = $buttonRow1.find('.button.is-active');
+
+  $buttonRow1.on( 'click', '.button', function( event ) {
+    // deactivate previous button
+    $activeButton1.removeClass('is-active');
+    // set & activate new button
+    $activeButton1 = $( this );
+    $activeButton1.addClass('is-active');
+  });
+
+  // button row 2
+  var $buttonRow2 = $('.button-row2');
+  var $activeButton2 = $buttonRow2.find('.button.is-active');
+
+  $buttonRow2.on( 'click', '.button', function( event ) {
+    $activeButton2.removeClass('is-active');
+    $activeButton2 = $( this );
+    $activeButton2.addClass('is-active');
+  });
+
+  // button row 2
+  var $buttonRow3 = $('.button-row3');
+  var $activeButton3 = $buttonRow3.find('.button.is-active');
+
+  $buttonRow3.on( 'click', '.button', function( event ) {
+    $activeButton3.removeClass('is-active');
+    $activeButton3 = $( this );
+    $activeButton3.addClass('is-active');
+  });
+solutionCode: |
+  // use .each() to call function for each button row
+  $('.button-row').each( function() {
+    var $buttonRow = $( this );
+    var $activeButton = $buttonRow.find('.button.is-active');
+
+    $buttonRow.on( 'click', '.button', function( event ) {
+      // deactivate previous button
+      $activeButton.removeClass('is-active');
+      // set & activate new button
+      $activeButton = $( this );
+      $activeButton.addClass('is-active');
+    });
+  });
+problemCodePen: 483afa257e21af6be748a84257562576
+solutionCodePen: c713d68c0d6c21131635d98ac3bf76fb
 ---
 
-<div class="duo code-compare">
-  <div class="duo__cell code-compare__nay">
-    <h2>Look out for</h2>
-    <p>Similar repeated code.</p>
-    ``` js
-    // button row 1
-    var $buttonRow1 = $('.button-row1');
-    var $activeButton1 = $buttonRow1.find('.button.is-active');
-
-    $buttonRow1.on( 'click', '.button', function( event ) {
-      // deactivate previous button
-      $activeButton1.removeClass('is-active');
-      // set & activate new button
-      $activeButton1 = $( this );
-      $activeButton1.addClass('is-active');
-    });
-
-    // button row 2
-    var $buttonRow2 = $('.button-row2');
-    var $activeButton2 = $buttonRow2.find('.button.is-active');
-
-    $buttonRow2.on( 'click', '.button', function( event ) {
-      $activeButton2.removeClass('is-active');
-      $activeButton2 = $( this );
-      $activeButton2.addClass('is-active');
-    });
-
-    // button row 2
-    var $buttonRow3 = $('.button-row3');
-    var $activeButton3 = $buttonRow3.find('.button.is-active');
-
-    $buttonRow3.on( 'click', '.button', function( event ) {
-      $activeButton3.removeClass('is-active');
-      $activeButton3 = $( this );
-      $activeButton3.addClass('is-active');
-    });
-    ```
-    
-    <!-- https://codepen.io/desandro/pen/483afa257e21af6be748a84257562576 -->
-  </div>
-  <div class="duo__cell code-compare__yay">
-    <h2>Solution</h2>
-    <p>Use a function to perform same code over multiple things.</p>
-    ``` js
-    // use .each() to call function for each button row
-    $('.button-row').each( function() {
-      var $buttonRow = $( this );
-      var $activeButton = $buttonRow.find('.button.is-active');
-
-      $buttonRow.on( 'click', '.button', function( event ) {
-        // deactivate previous button
-        $activeButton.removeClass('is-active');
-        // set & activate new button
-        $activeButton = $( this );
-        $activeButton.addClass('is-active');
-      });
-    });
-    ```
-    
-    <!-- https://codepen.io/desandro/pen/c713d68c0d6c21131635d98ac3bf76fb -->
-  </div>
-</div>
-
-<!-- html-in-md <div class="lesson-content"> -->
-
-<p data-height="300" data-theme-id="dark" data-slug-hash="c713d68c0d6c21131635d98ac3bf76fb" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="button rows 2" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/c713d68c0d6c21131635d98ac3bf76fb/">button rows 2</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="350" data-theme-id="dark" data-slug-hash="c713d68c0d6c21131635d98ac3bf76fb" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="button rows 2" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/c713d68c0d6c21131635d98ac3bf76fb/">button rows 2</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<!-- html-in-md <div class="skinny-column"> -->
 
 ## Lesson
 

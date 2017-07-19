@@ -1,0 +1,27 @@
+<div class="duo">
+  <div class="duo__cell">
+    <h3>Look out for</h3>
+    <p>{{{problemText}}}</p>
+  </div>
+  <div class="duo__cell">
+    <h3>Resolve by</h3>
+    <p>{{{solutionText}}}</p>
+  </div>
+</div>
+
+<div class="duo">
+  <div class="duo__cell">
+``` js
+{{{problemCode}}}```
+    {{#if hasPenLinks}}
+      {{> edit-codepen codepenSlug=problemCodePen }}
+    {{/if}}
+  </div>
+  <div class="duo__cell">
+``` js
+{{{solutionCode}}}```
+    {{#if hasPenLinks}}
+      {{> edit-codepen codepenSlug=solutionCodePen }}
+    {{/if}}
+  </div>
+</div>

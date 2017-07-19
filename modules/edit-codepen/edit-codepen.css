@@ -1,0 +1,26 @@
+/* edit-codepen
+------------------------- */
+
+a .edit-codepen__text {
+  text-decoration: underline;
+}
+
+.edit-codepen .codepen-logo {
+  width: 24px;
+  height: 24px;
+  vertical-align: top;
+}
+
+
+.edit-codepen a .codepen-logo path {
+  stroke: #ED0;
+}
+
+.edit-codepen a:visited .codepen-logo path {
+  stroke: #E62;
+}
+
+.edit-codepen a:hover .codepen-logo path {
+  stroke: #C25;
+}
+

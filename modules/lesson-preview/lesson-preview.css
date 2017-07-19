@@ -1,0 +1,38 @@
+/* lesson-preview
+------------------------- */
+
+.lesson-preview {
+  margin: 80px 0;
+  padding-top: 20px;
+  position: relative;
+}
+
+.lesson-preview:before {
+  content: '';
+  display: block;
+  background: #222;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+}
+
+/* ---- lesson-preview__button ---- */
+
+.lesson-preview__button {
+  display: inline-block;
+  background: #E62;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.lesson-preview__button:visited {
+  background: #C25;
+  color: white;
+}
+
+.lesson-preview__button:hover {
+  background: #19F;
+  color: white;
+}

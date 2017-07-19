@@ -29,7 +29,8 @@ function replaceCodeBlock( match, leadingWhiteSpace, block ) {
   }
   // highlight code
   var highlighted = language ? highlightjs.highlight( language, block, true ).value : block;
-  // wrap in <pre><code>
+
+  // wrap in <code>
   var html = '\n<pre><code' +
     ( language ? ' class="' + language + '"' : '' ) + '>' +
     highlighted + '</code></pre>';

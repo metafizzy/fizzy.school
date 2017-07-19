@@ -1,54 +1,43 @@
 ---
 title: Hash maps
-layout: page
+layout: lesson
+problemText: Long, repetitive conditionals checking over the same value.
+solutionText: Using a hash map. Set data in an list-like object and access values with variables.
+problemCode: |
+  var stateName;
+    if ( value == 'DE' ) {
+      stateName = 'Delaware';
+    } else if ( value == 'MA' ) {
+      stateName = 'Massachusetts';
+    } else if ( value == 'MD' ) {
+      stateName = 'Maryland';
+    } else if ( value == 'NJ' ) {
+      stateName = 'New Jersey';
+    }
+  });
+solutionCode: |
+  var stateNames = {
+    DE: 'Delaware',
+    MA: 'Massachusetts',
+    MD: 'Maryland',
+    NJ: 'New Jersey',
+  };
+
+  var stateName = stateNames[ value ];
+problemCodePen: e6366654a1566325c6c471adf2a9a2a2
+solutionCodePen: 200711f375d97a12eec816abaec5fc50
 ---
 
-<div class="duo code-compare">
-  <div class="duo__cell code-compare__nay">
-    <h2>Look out for</h2>
-    <p>Long, repetitive conditionals checking over the same value</p>
-    ``` js
-    var stateName;
-      if ( value == 'DE' ) {
-        stateName = 'Delaware';
-      } else if ( value == 'MA' ) {
-        stateName = 'Massachusetts';
-      } else if ( value == 'MD' ) {
-        stateName = 'Maryland';
-      } else if ( value == 'NJ' ) {
-        stateName = 'New Jersey';
-      }
-    });
-    ```
-    <!-- https://codepen.io/desandro/pen/e6366654a1566325c6c471adf2a9a2a2/ -->
-  </div>
-  <div class="duo__cell code-compare__yay">
-    <h2>Solution</h2>
-    <p>Set data in an list-like object and accessing a value with a variable.</p>
-    ``` js
-    var stateNames = {
-      DE: 'Delaware',
-      MA: 'Massachusetts',
-      MD: 'Maryland',
-      NJ: 'New Jersey',
-    };
-
-    var stateName = stateNames[ value ];
-    ```
-    <!-- https://codepen.io/desandro/pen/200711f375d97a12eec816abaec5fc50 -->
-  </div>
-</div>
-
-<!-- html-in-md <div class="lesson-content"> -->
-
 <p data-height="300" data-theme-id="dark" data-slug-hash="200711f375d97a12eec816abaec5fc50" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="state select 2" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/200711f375d97a12eec816abaec5fc50/">state select 2</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
+<!-- html-in-md <div class="skinny-column"> -->
 
 ## Benefits
 
 + Clean up code
 + Learn how to leverage bracket notation with objects
 
-## The lesson
+## Lesson
 
 Programming is largely about abstractions. Long strings of text and big concepts can be reduced to wee variables, which are easier to both read and manipulate in the code. But ultimately, the goal of programming is work with humans, who live outside the code. They prefer the original, fully-expanded strings and concepts.
 
@@ -156,7 +145,7 @@ Let's expand on the above example. We'll add a title to the state name, either _
   </div>
 </div>
 
-<!-- html-in-md <div class="lesson-content"> -->
+<!-- html-in-md <div class="skinny-column"> -->
 
 In the initial example, we check if the state is a commonwealth with conditionals for each potential value. This requires multiple conditionals, grouped together with OR `||` operator.
 
@@ -224,7 +213,7 @@ This pattern is more abstract than a straight set of conditionals. But the benef
   </div>
 </div>
 
-<!-- html-in-md <div class="lesson-content"> -->
+<!-- html-in-md <div class="skinny-column"> -->
 
 <p data-height="300" data-theme-id="dark" data-slug-hash="28905ad8756fe1a4bb3033d70fed52a2" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="Calculator" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/28905ad8756fe1a4bb3033d70fed52a2/">Calculator</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>

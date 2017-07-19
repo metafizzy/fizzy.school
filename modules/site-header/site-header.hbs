@@ -1,0 +1,26 @@
+<header class="site-header {{#if isBig}}is-big{{/if}}">
+  <div class="container">
+    <div class="site-header__flexer">
+
+      <div class="site-header__cell">
+        {{> witchie-logo}}
+      </div>
+
+      <div class="site-header__cell site-header__cell--expand">
+        <a class="site-header__link" href=".">
+          <h1 class="site-header__title">Fizzy School</h1>
+          <p class="site-header__tagline">Lessons in JavaScript for anyone writing jQuery</p>
+        </a>
+      </div>
+
+      <div class="site-header__cell site-header__sponsor">
+        <a class="site-header__sponsor__link" href="https://metafizzy.co">
+          <span class="site-header__sponsor__brought">Brought to you by</span>
+          {{> metafizzy-logo}}
+          {{> metafizzy-wordmark}}
+        </a>
+      </div>
+
+    </div> {{! .site-header__flexer }}
+  </div> {{! .container }}
+</header>

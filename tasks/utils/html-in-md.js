@@ -3,8 +3,8 @@ var transfob = require('transfob');
  // HACK
 // Using Markdown within an HTML block breaks Markdown
 // This replaces comment tags with HTML
-// <!-- html-in-md <div class="lesson-content"> -->
-// => <div class="lesson-content">
+// <!-- html-in-md <div class="skinny-column"> -->
+// => <div class="skinny-column">
 
 var htmlInMdRe = /<!-- html-in-md (.+) -->/gi;
 
