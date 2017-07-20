@@ -13,7 +13,6 @@
 </head>
 <body>
 
-
 {{> site-header}}
 
 <div class="main">
@@ -27,6 +26,11 @@
   </div>
 </div>
 
+{{> site-footer}}
+
+{{#each jsPaths}}
+  <script src="../{{this}}"></script>
+{{/each}}
 
 </body>
 </html>

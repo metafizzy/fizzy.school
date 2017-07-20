@@ -1,0 +1,18 @@
+/* site-footer
+------------------------- */
+
+.site-footer {
+  background: #222;
+  padding: 40px 0;
+}
+
+.site-footer__copy {
+  font-size: 1.2rem;
+}
+
+.site-footer .metafizzy-logo {
+  width: 40px;
+  height: 50px;
+  vertical-align: middle;
+  margin-right: 5px;
+}

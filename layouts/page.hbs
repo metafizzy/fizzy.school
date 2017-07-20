@@ -23,6 +23,11 @@
   </div>
 </div>
 
+{{> site-footer}}
+
+{{#each jsPaths}}
+  <script src="../{{this}}"></script>
+{{/each}}
 
 </body>
 </html>
