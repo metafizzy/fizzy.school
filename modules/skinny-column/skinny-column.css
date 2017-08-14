@@ -3,7 +3,8 @@
 
 .skinny-column {
   max-width: 700px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .skinny-column a { text-decoration: underline; }
