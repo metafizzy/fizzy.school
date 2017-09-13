@@ -52,15 +52,16 @@
 }
 
 .site-header .metafizzy-logo {
-  width: 45px;
-  height: 65px;
+  width: 35px;
+  height: 45px;
 }
 
 .site-header .metafizzy-logo__body { fill: #D26; }
 .site-header .metafizzy-logo__stripes { display: none; }
 
 .site-header .metafizzy-wordmark {
-  width: 170px;
+  width: 140px;
+  height: 40px;
   stroke: #D26;
 }
 
