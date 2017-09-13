@@ -20,6 +20,7 @@ var lessonList = [
   'cache-jquery-objects',
   'state-variables',
   'un-repeat-with-functions',
+  'avoid-jquery-this',
   'simplify-selectors',
   'hash-maps',
   'return-early',
