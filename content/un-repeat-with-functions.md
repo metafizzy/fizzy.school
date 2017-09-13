@@ -216,6 +216,8 @@ initButtonRow('.button-row2');
 initButtonRow('.button-row3');
 ```
 
+<!-- html-in-md {{> edit-codepen codepenSlug="e012ea84c5aab0d8d9344cfb6a0b70a8" }} -->
+
 This code has two parts.
 
 First, the function `initButtonRow` is declared. This function works nearly the same as the function in `.each()`, the only difference being the addition of a `selector` argument used to to select the element, instead of using `this`.

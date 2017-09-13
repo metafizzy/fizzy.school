@@ -46,6 +46,10 @@
   vertical-align: middle;
 }
 
+.site-header__sponsor__link {
+  display: block;
+}
+
 .site-header__sponsor__brought {
   display: block;
   line-height: 1.2;

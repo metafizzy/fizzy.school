@@ -4,11 +4,11 @@ layout: lesson
 problemText: Making the same jQuery selections within functions and across code blocks.
 solutionText: Storing jQuery objects as variables so they can be reused.
 problemCode: |
-  $('.gallery-link-list a').click( function( event ) {
+  $('.photo-list').on( 'click', 'a', function( event ) {
     // make jQuery selections with each click
-    $('.gallery__image').attr( 'src', $(this).attr('href') );
-    $('.gallery__title').text( $(this).text() );
-    $('.gallery__caption').text( $(this).attr('title') );
+    $('.gallery__image').attr( 'src', $( this ).attr('href') );
+    $('.gallery__title').text( $( this ).text() );
+    $('.gallery__caption').text( $( this ).attr('title') );
   });
 solutionCode: |
   // get jQuery objects once
@@ -16,9 +16,9 @@ solutionCode: |
   var $galleryTitle = $('.gallery__title');
   var $galleryCaption = $('.gallery__caption');
 
-  $('.gallery-link-list a').click( function( event ) {
+  $('.photo-list').on( 'click', 'a', function( event ) {
     // get clicked element
-    var $link = $(this);
+    var $link = $( this );
     // use cached jQuery objects
     $galleryImage.attr( 'src', $link.attr('href') );
     $galleryTitle.text( $link.text() );
@@ -75,6 +75,7 @@ Clicking a link changes the gallery content. The link text becomes the gallery t
 
 ``` js
 $('.photo-list').on( 'click', 'a', function( event ) {
+  event.preventDefault();
   $('.gallery__title').text( $( this ).text() );
   $('.gallery__image').attr( 'src', $( this ).attr('href') );
   $('.gallery__caption').text( $( this ).attr('title') );

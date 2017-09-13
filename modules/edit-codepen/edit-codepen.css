@@ -1,6 +1,10 @@
 /* edit-codepen
 ------------------------- */
 
+.skinny-column .edit-codepen__link {
+  text-decoration: none;
+}
+
 a .edit-codepen__text {
   text-decoration: underline;
 }
@@ -11,16 +15,14 @@ a .edit-codepen__text {
   vertical-align: top;
 }
 
-
-.edit-codepen a .codepen-logo path {
-  stroke: #ED0;
+.edit-codepen a .codepen-logo {
+  stroke: #19F;
 }
 
-.edit-codepen a:visited .codepen-logo path {
+.edit-codepen a:visited .codepen-logo {
   stroke: #E62;
 }
 
-.edit-codepen a:hover .codepen-logo path {
+.edit-codepen a:hover .codepen-logo {
   stroke: #C25;
 }
-
