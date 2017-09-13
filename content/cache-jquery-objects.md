@@ -41,12 +41,18 @@ solutionCodePen: ff6ee1e664ebd2af70cde44f6f8db6fe
 
 ## Lesson
 
-Caching jQuery objects is the first thing I look for when refactoring front-end JavaScript. It is easy to implement, but more importantly, it opens the door to understanding several key facets about how JavaScript works.
+jQuery's foundational unit is the jQuery selection.
 
-Let's use a photo gallery example:
+``` js
+$('.gallery__title')
+```
+
+In and of itself, jQuery selection is perfectly functional piece of code. Its not until we start building actual programs with multiple selections and behaviors that we encounter problems.
+
+Here's a good example. It's a photo gallery controlled by a list of links. Each link has text, an `href` attribute pointing to an image, and a `title` attribute acting as a caption.
 
 ``` html
-<ul class="gallery-link-list">
+<ul class="photo-list">
   <li><a href="cat-nose.jpg"
          title="Close up cat nose">Cat</a></li>
   <li><a href="contrail.jpg"
@@ -65,45 +71,39 @@ Let's use a photo gallery example:
 <p><button class="reset-button">Reset photo</button></p>
 ```
 
-This example has a list of links. Each link has an `href` pointing to an image, a `title` with an image's caption, and its text as the image's title. The desired behavior of the gallery is clicking a link will change elements within `gallery` to show the respective image, title, and caption. Clicking a reset button resets the image, caption, and title.
+Clicking a link changes the gallery content. The link text becomes the gallery title, the link's `href` becomes the gallery image's `src`, and the link's `title` becomes the `.gallery__caption` text.
 
 ``` js
-$('.gallery-link-list a').click( function( event ) {
-  event.preventDefault();
-  $('.gallery__image').attr( 'src', $(this).attr('href') );
-  $('.gallery__title').text( $(this).text() );
-  $('.gallery__caption').text( $(this).attr('title') );
-});
-
-$('.reset-button').click( function() {
-  $('.gallery__image').attr( 'src', 'https://dummyimage.com/240x240' );
-  $('.gallery__title').text( 'Photo title' );
-  $('.gallery__caption').text( 'This is the photo caption' );
+$('.photo-list').on( 'click', 'a', function( event ) {
+  $('.gallery__title').text( $( this ).text() );
+  $('.gallery__image').attr( 'src', $( this ).attr('href') );
+  $('.gallery__caption').text( $( this ).attr('title') );
 });
 ```
 
-First, it must be said, it works! Indeed, it works just fine. So what's wrong?
+It's using several jQuery selections and it works just fine. So what's wrong?
 
-To answer that, we need to understand what's going at a granular scale. Let's zoom in on this line:
+To answer that, we need to understand what's going at a granular scale. Let's zoom in just a single jQuery selection:
 
 ``` js
-$('.gallery__image').attr( 'src', $(this).attr('href') );
+$('.gallery__title')
 ```
 
-This line of code is a standard jQuery pattern: 'select and do.' It's very straightforward: specify an element (or elements), and do something with them. In this case, it's selecting the `.gallery__image` element and setting its `src` attribute to the clicked link's `href` attribute. jQuery's syntax makes this code easy to write. But it does so by hiding some big concepts.
+This bit of JavaScript uses a CSS selector, but its important to remember, JavaScript and CSS are fundamentally different. This code hides those differences.
 
-Let's zoom in further, looking at just the jQuery element selection:
+That `$` dollar sign actually is not a core JavaScript keyword or syntax. It is a shorthand name of a function, an alias its full name: `jQuery`.
 
 ``` js
-$('.gallery__image')
+$ === jQuery
+// => true
 ```
 
-Although jQuery uses CSS selectors to select elements, jQuery and JavaScript are fundamentally different than CSS or HTML. This line of code may look nearly identical to a CSS selection, but it hides features of JavaScript.
+jQuery's code provides two names for its main function, `jQuery` and `$`. The `$` dollar sign is just to save code for convienence
 
-That `$` dollar sign is an alias for `jQuery`. We can rewrite the selection:
+We can rewrite the selection with the `jQuery` name:
 
 ``` js
-jQuery('.gallery__image')
+jQuery('.gallery__title')
 ```
 
 Now this selection code begins to show its true form. It's a function call. The function is `jQuery` and its being called with one argument, a string, `'.gallery__image'`. `jQuery` is the name of the library, but it does not describe what its doing here. Let's rename the `jQuery` function as `getElements` to underscore its purpose:
@@ -117,70 +117,86 @@ Each time you make a jQuery selection `$()`, you ask JavaScript to go look at th
 Let's take another look at the link click code, but this time replacing `$` with `getElements`.
 
 ``` js
-getElements('.gallery-link-list a').click( function( event ) {
-  event.preventDefault();
-  getElements('.gallery__image').attr( 'src', getElements(this).attr('href') );
-  getElements('.gallery__title').text( getElements(this).text() );
-  getElements('.gallery__caption').text( getElements(this).attr('title') );
+getElements('.photo-list').on( 'click', 'a', function( event ) {
+  getElements('.gallery__title').text( getElements( this ).text() );
+  getElements('.gallery__image').attr( 'src', getElements( this ).attr('href') );
+  getElements('.gallery__caption').text( getElements( this ).attr('title') );
 });
 ```
 
-With each click, this code gets elements on six separate calls. The same elements are selected over and over again. We can reduce this by storing the jQuery objects as variables. 
+This code gets elements on six separate calls. With each click, the same elements are selected over and over again. That's the issue.
+
+We can fix this by storing the jQuery objects as variables.
 
 ## jQuery objects
 
-When you make a jQuery selection, it returns a jQuery object. This allows you to immediately chain the selection into a jQuery method like `.attr()`.
+When you make a jQuery selection, it returns a jQuery object. This allows you to immediately chain the selection into a jQuery method like `.text()`.
 
 ``` js
 // make selection and do
-$('.gallery__image').attr( ... );
+$('.gallery__title').text('Magic hour');
 ```
 
-But you don't always have to _select and do._ The jQuery object returned by the selection can be stored as a variable. This is also called caching.
+But you don't always have to _select and do_. The jQuery object returned by the selection can be stored as a variable. This is also called caching.
 
 ``` js
 // make selection, set variable
-var $galleryImage = $('.gallery__image');
+var $galleryTitle = $('.gallery__title');
 // do
-$galleryImage.attr( ... );
+$galleryTitle.text('Magic hour');
 ```
 
 I've named the variable `$galleryImage` with an initial `$`. This is just a naming convention, denoting that the variable is a jQuery object. Changing the variable to just `galleryImage` without a `$` works just as well.
 
 Now that we have the jQuery object stored as variable, we don't have to select it again. This allows us to only get elements when necessary and re-use those selected elements throughout our code.
 
-Rather than selecting the elements on each click, let's select them before any click and use them within the click handler functions.
+Looking back at the gallery example, `$('.gallery__title')`, `$('.gallery__image')`, `$('.gallery__caption')` can all be pulled out of the click function and set as separate variables. The `$( this )` is different with each click, so its variable `$link` needs to be set within the click event function.
 
 ``` js
 // get jQuery selections
-var $galleryImage = $('.gallery__image');
 var $galleryTitle = $('.gallery__title');
+var $galleryImage = $('.gallery__image');
 var $galleryCaption = $('.gallery__caption');
 
-$('.gallery-link-list a').click( function( event ) {
-  event.preventDefault();
+$('.photo-list').on( 'click', 'a', function( event ) {
   // get clicked element
-  var $link = $(this);
+  var $link = $( this );
   $galleryImage.attr( 'src', $link.attr('href') );
   $galleryTitle.text( $link.text() );
   $galleryCaption.text( $link.attr('title') );
 });
+```
+
+
+This technique is especially useful across different functions. Our example also has a reset button click event that uses the same jQuery selections. Multiple functions do not need to re-select the same items. We can use the same cached jQuery object variables.
+
+``` js
+// get jQuery selections
+var $galleryTitle = $('.gallery__title');
+var $galleryImage = $('.gallery__image');
+var $galleryCaption = $('.gallery__caption');
+
+$('.photo-list').on( 'click', 'a', function( event ) {
+  // get clicked element
+  var $link = $( this );
+  $galleryTitle.text( $link.text() );
+  $galleryImage.attr( 'src', $link.attr('href') );
+  $galleryCaption.text( $link.attr('title') );
+});
 
 $('.reset-button').click( function() {
+  $galleryTitle.text('Photo title');
   $galleryImage.attr( 'src', 'https://dummyimage.com/240x240' );
-  $galleryTitle.text( 'Photo title' );
-  $galleryCaption.text( 'This is the photo caption' );
+  $galleryCaption.text('This is the photo caption');
 });
 ```
 
-Two things to note:
-
-**1**: `$link` is set within the link click function, not outside. This is because the value of `this` changes with each click. In that case, it needs to be set on each click. Once set, `$link` is then used multiple times.
-
-**2**: both `$('.gallery-link-list a')` and `$('.reset-button')` have not been stored as a variable. This is because these selections are only used once in the code.
+One note: `$('.photo-list')` and `$('.reset-button')` are not cached as variables because they are only selected and used once.
 
 ## Wrap up
 
-Caching jQuery selections is a powerful practice. Not only does it expose how jQuery works, it can be the first step to opening an even bigger concept: thinking with variables. More on that in the next chapter: [State variables](state-variables).
+Caching jQuery objects is the number thing I look for when refactoring code. It's not just about a little performance boost. By using jQuery object variables, you demonstrate several key concepts with JavaScript: that the jQuery selection is not magic syntax, but a function call, and that you can store the result of a functions as variables, and those variables can be re-used around your code.
+
+So take another look at your jQuery selections. Any of the same selections that occur multiple times should be moved out and cached as variables. It's an easy improvement, and it can be the first step toward learning an even bigger concept: thinking with variables. More on that in the next lesson: [State variables](state-variables).
 
 <!-- html-in-md </div> -->
