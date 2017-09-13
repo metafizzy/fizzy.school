@@ -5,8 +5,8 @@
     c0 75 62 128 129 128c24 0 48-7 68-20l16-10l-23 66C199 917 267 998 350 998
     c54 0 104-35 122-87l7-20c19-2 37-8 55-18l92-57c25-16 45-39 54-68l46-131
     c19-54 14-125 1-185c8-16 51-112 51-220C779 58 695 31 642 31z"/>
-  <clippath id="metafizzy-logo__body">
-    <path d="M566 164c-2-34 19-67 54-78c41-13 84 9 97 50c21 67 7 146-13 218
+  <defs>
+    <path id="metafizzy-logo__body-path" d="M566 164c-2-34 19-67 54-78c41-13 84 9 97 50c21 67 7 146-13 218
       C688 310 631 222 566 164z M626 314C567 227 500 155 424 156c-14 0-25-13-25-27
       c1-14 13-25 27-25c42 1 71 15 73 16l0 0C489 70 426 33 371 66c-36 22-50 65-36 103
       c-37 11-108 52-132 75c-27-31-73-39-109-17c-41 25-53 78-29 118c20 32 58 47 93 39
@@ -15,9 +15,13 @@
       c5 29 1 52-3 62c0 0-22 61-38 111c-18 55 24 103 72 103c30 0 62-17 74-52l60-174
       c3-7 8-13 16-16c25-9 45-27 45-27c11-10 27-9 36 2c10 11 9 27-2 36
       c-1 1-22 20-51 33l-29 84l0 0c3-1 5-3 8-4l92-57c15-9 27-24 33-41l46-131
-      C705 521 671 383 626 314z"/>
+      C705 521 671 383 626 314z" />
+  </defs>
+  <use class="metafizzy-logo__body" xlink:href="#metafizzy-logo__body-path" />
+  <clippath id="metafizzy-logo__body-clip">
+    <use xlink:href="#metafizzy-logo__body-path" />
   </clippath>
-  <g clip-path="url(#metafizzy-logo__body)">
+  <g class="metafizzy-logo__stripes" clip-path="url(#metafizzy-logo__body-clip)">
     <polygon class="metafizzy-logo__stripe4" fill="#19F" points="1016 544 278 1018 174 837 911 373"/>
     <polygon class="metafizzy-logo__stripe3" fill="#EA0" points="822 435 174 843 85 695 822 232"/>
     <polygon class="metafizzy-logo__stripe2" fill="#E62" points="822 238 85 701 74 469 717 65"/>
