@@ -43,8 +43,7 @@
 }
 
 .site-header__sponsor svg {
-  vertical-align: bottom;
-
+  vertical-align: middle;
 }
 
 .site-header__sponsor__brought {
@@ -62,16 +61,12 @@
 
 .site-header .metafizzy-wordmark {
   width: 170px;
-  height: 60px;
-}
-
-.site-header .metafizzy-wordmark path {
-  fill: #D26;
+  stroke: #D26;
 }
 
 .site-header a:hover .metafizzy-logo__body { display: none; }
 .site-header a:hover .metafizzy-logo__stripes { display: inline; }
 
-.site-header a:hover .metafizzy-wordmark path {
-  fill: white;
+.site-header a:hover .metafizzy-wordmark {
+  stroke: white;
 }
