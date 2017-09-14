@@ -23,7 +23,7 @@ var lessonList = [
   'avoid-jquery-this',
   'simplify-selectors',
   'hash-maps',
-  'return-early',
+  // 'return-early',
 ];
 
 gulp.task( 'lessons', function() {

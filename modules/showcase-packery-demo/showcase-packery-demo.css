@@ -33,6 +33,7 @@
   transition: opacity 0.2s, box-shadow 0.2s;
   cursor: -webkit-grab;
   cursor: grab;
+  color: white;
 }
 
 .showcase-packery-demo__grid__item--draggable.is-dragging {

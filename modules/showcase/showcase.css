@@ -9,6 +9,8 @@
   margin-bottom: 10px;
 }
 
+.theme--light .showcase__product { background: white; }
+
 .showcase__product__link {
   display: block;
   padding: 10px 10px 20px;

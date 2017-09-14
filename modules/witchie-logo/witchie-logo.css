@@ -6,6 +6,7 @@
   padding: 20px;
   border-radius: 50%;
   position: relative;
+  cursor: pointer;
 }
 
 .witchie-logo__svg {
@@ -17,4 +18,35 @@
   height: 70%;
 }
 
-.witchie-logo__broom { fill: #E62; }
+.theme--dark .witchie-logo:hover .witchie-logo__dress,
+.theme--light .witchie-logo:hover .witchie-logo__dress { fill: #E62; }
+
+/* light theme */
+.theme--light .witchie-logo { background: #222; }
+.theme--light .witchie-logo__dress { fill: white; }
+
+.witchie-logo__label {
+  position: absolute;
+  width: 160px;
+  left: -30px;
+  top: 110px;
+  padding: 5px 0;
+  background: white;
+  border-radius: 5px;
+  color: #E62;
+  font-size: 0.8rem;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.theme--light .witchie-logo__label {
+  background: #222;
+}
+
+.witchie-logo:hover .witchie-logo__label {
+  opacity: 1;
+  transform: translateY(0);
+}

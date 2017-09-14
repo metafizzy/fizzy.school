@@ -6,6 +6,8 @@
   background: #222;
 }
 
+.theme--light .site-header { background: #EEE; }
+
 .site-header__flexer {
   display: -webkit-box;
   display: flex;
@@ -75,3 +77,8 @@
 .site-header a:hover .metafizzy-wordmark {
   stroke: white;
 }
+
+.theme--light .site-header a:hover .metafizzy-wordmark {
+  stroke: #333;
+}
+

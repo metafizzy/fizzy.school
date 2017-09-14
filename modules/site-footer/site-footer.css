@@ -6,6 +6,10 @@
   padding: 40px 0;
 }
 
+.theme--light .site-footer {
+  background: #EEE;
+}
+
 .site-footer__copy {
   font-size: 1.2rem;
 }

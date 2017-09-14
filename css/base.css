@@ -8,8 +8,17 @@ html {
   color: #F5F5F5;
 }
 
+html.theme--light {
+  background: #EEE;
+  color: #555;
+}
+
 body {
   background: #333;
+}
+
+.theme--light body {
+  background: white;
 }
 
 /* ---- a ---- */
@@ -72,12 +81,20 @@ hr:before {
   border-radius: 2px;
 }
 
+.theme--light hr:before { background: #EEE; }
+
 /* ---- pre, code ---- */
 
 pre, code {
   background: #222;
   color: white;
   font-size: 16px;
+}
+
+.theme--light pre,
+.theme--light code {
+  background: #F4F4F4;
+  color: #333;
 }
 
 pre {

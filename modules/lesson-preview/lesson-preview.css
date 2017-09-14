@@ -16,6 +16,10 @@
   border-radius: 2px;
 }
 
+.theme--light .lesson-preview:before {
+  background: #EEE;
+}
+
 /* ---- lesson-preview__button ---- */
 
 .lesson-preview__button {

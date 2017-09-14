@@ -13,7 +13,7 @@ code .hl-title { color: #9CF; }
 code .hl-params { color: #98D; }
 code .hl-regexp  { color: #FC8; } /* regex */
 code .hl-o  { color: #F63; }   /* operator */
-code .hl-nb { color: #AA97AC;} /* support */
+code .hl-nb { color: #A9A;} /* support */
 code .hl-built_in { color: #DD8; }
 
 /* comment */
@@ -32,3 +32,29 @@ code .hl-at_rule { color: #088; }
 
 code .hl-jquery-var { color: #FD9; }
 
+/* ---- light theme ---- */
+
+.theme--light code .hl-string,
+.theme--light code .hl-tag .value { color: #092; }
+.theme--light code .hl-number, /* integer */
+.theme--light code .hl-cp, /* doctype */
+.theme--light code .hl-literal { color: #07D; } /*boolean*/
+.theme--light code .hl-keyword { color: #D41; } /* keyword */
+.theme--light code .hl-kd, /* storage */
+.theme--light code .hl-attribute { color: #D31; } /* markup attribute */
+.theme--light code .hl-title  { color: #39A; }
+.theme--light code .hl-params  { color: #18C; }
+.theme--light code .hl-p  { color: #EDB; } /* punctuation */
+.theme--light code .hl-o  { color: #F63; }   /* operator */
+.theme--light code .hl-nb { color: #A9A;} /* support */
+.theme--light code .hl-tag { color: #37B; } /* Markup open tag */
+.theme--light code .hl-id { color: #567; } /* css id */
+.theme--light code .hl-class { color: #B27; }  /* CSS class */
+.theme--light code .hl-rules { color: #431; }
+.theme--light code .hl-value  { color: #555; } /* CSS value */
+.theme--light code .hl-nd,
+.theme--light code .hl-pseudo { color: #38D; } /* CSS pseudo selector */
+.theme--light code .hl-hexcolor { color: #F63; }
+.theme--light code .hl-at_rule { color: #088; }
+.theme--light code .hl-built_in { color: #19F; }
+.theme--light code .hl-jquery-var { color: #D62; }

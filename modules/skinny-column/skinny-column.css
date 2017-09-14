@@ -24,3 +24,7 @@
   background: #222;
   border-radius: 2px;
 }
+
+.theme--light .skinny-column h2:before {
+  background: #EEE;
+}
