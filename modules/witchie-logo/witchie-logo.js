@@ -18,21 +18,19 @@ function updateTheme( theme ) {
 
 // ----- logo click ----- //
 
-var logo = document.querySelector('.witchie-logo');
+FizzySchool['witchie-logo'] = function( elem ) {
 
-if ( !logo ) {
-  return;
-}
-
-var isDark = siteTheme == 'dark';
-var labelTheme = logo.querySelector('.witchie-logo__label__theme');
-labelTheme.textContent = isDark ? 'light' : 'dark';
-
-logo.addEventListener( 'click', function() {
-  isDark = !isDark;
-  var theme = isDark ? 'dark' : 'light';
-  updateTheme( theme );
+  var isDark = siteTheme == 'dark';
+  var labelTheme = elem.querySelector('.witchie-logo__label__theme');
   labelTheme.textContent = isDark ? 'light' : 'dark';
-});
+
+  elem.addEventListener( 'click', function() {
+    isDark = !isDark;
+    var theme = isDark ? 'dark' : 'light';
+    updateTheme( theme );
+    labelTheme.textContent = isDark ? 'light' : 'dark';
+  });
+
+};
 
 })();
