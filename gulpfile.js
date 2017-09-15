@@ -23,6 +23,8 @@ require('./tasks/content')( site );
 
 gulp.task( 'default', [
   'content',
+  'css',
+  'js',
 ]);
 
 // ----- serve ----- //
@@ -34,7 +36,7 @@ gulp.task( 'serve', serve('build') );
 // ----- dev ----- //
 
 gulp.task( 'dev', [
-  'default',
+  'content',
 ], function() {
   watches.forEach( function( watchable ) {
     gulp.watch.apply( gulp, watchable );

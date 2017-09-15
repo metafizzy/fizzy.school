@@ -1,3 +1,6 @@
+var gulp = require('gulp');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 var getGlobPaths = require('./utils/get-glob-paths');
 
 var jsSrc = [
@@ -44,6 +47,14 @@ var jsSrc = [
   // init
   'js/init.js',
 ];
+
+// concat & minify js
+gulp.task( 'js', function() {
+  gulp.src( jsSrc )
+    .pipe( uglify() )
+    .pipe( concat('fizzy-school.min.js') )
+    .pipe( gulp.dest('build') );
+});
 
 module.exports = function( site ) {
   site.data.jsPaths = getGlobPaths( jsSrc );

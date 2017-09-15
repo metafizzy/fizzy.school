@@ -1,36 +1,20 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-
-  <title>{{page.title}} &middot; Fizzy school</title>
-
-  {{#each cssPaths}}
-    <link rel="stylesheet" href="../{{this}}" />
-  {{/each}}
-
-</head>
+{{> html-head}}
 <body>
 
 {{> site-header}}
 
-<div class="main">
+<section class="main">
   <div class="container">
     <h1>{{page.title}}</h1>
+
     {{#with page}}
       {{> lesson-topper}}
     {{/with}}
 
 {{#block "main"}}{{/block}}
   </div>
-</div>
+</section>
 
 {{> site-footer}}
 
-{{#each jsPaths}}
-  <script src="../{{this}}"></script>
-{{/each}}
-
-</body>
-</html>
+{{> html-foot}}

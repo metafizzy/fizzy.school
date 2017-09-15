@@ -1,3 +1,5 @@
+var gulp = require('gulp');
+var concat = require('gulp-concat');
 var getGlobPaths = require('./utils/get-glob-paths');
 
 var cssSrc = [
@@ -7,6 +9,12 @@ var cssSrc = [
   'css/base.css',
   'modules/*/**/*.css',
 ];
+
+gulp.task( 'css', function() {
+  gulp.src( cssSrc )
+    .pipe( concat('fizzy-school.css') )
+    .pipe( gulp.dest('build') );
+});
 
 module.exports = function( site ) {
   site.data.cssPaths = getGlobPaths( cssSrc );

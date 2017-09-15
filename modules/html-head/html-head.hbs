@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>{{#if page.title}}{{page.title}} &middot; {{/if}}Fizzy school</title>
+
+  {{#if dev}}
+    {{#each cssPaths}}
+      <link rel="stylesheet" href="../{{this}}" />
+    {{/each}}
+  {{else}}
+    <link rel="stylesheet" href="fizzy-school.css?1" />
+  {{/if}}
+
+</head>
