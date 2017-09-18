@@ -1,5 +1,6 @@
 ---
 title: Simplify selectors
+description: Fix complicated selectors that concatenate variables and strings by Using child and filter selecting methods like .find(), .filter(), and .eq()
 layout: lesson
 problemText: Complicated selectors that concatenate variables and strings.
 solutionText: Using child and filter selecting methods like <code>.find()</code>, <code>.filter()</code>, and <code>.eq()</code>.

@@ -1,5 +1,6 @@
 ---
 title: Cache jQuery objects
+description: "Learn how to store jQuery selections as variables and re-use those variables around your code."
 layout: lesson
 problemText: Making the same jQuery selections within functions and across code blocks.
 solutionText: Storing jQuery objects as variables so they can be reused.

@@ -10,6 +10,7 @@ var htmlInMd = require('./utils/html-in-md');
 var transfob = require('transfob');
 var path = require('path');
 var gulpFilter = require('gulp-filter');
+var addSlug = require('./utils/add-slug');
 
 var contentSrc = 'content/*.md';
 var layoutsSrc = 'layouts/*.hbs';
@@ -62,6 +63,7 @@ module.exports = function( site ) {
     return gulp.src('content/*.md')
       .pipe( gulpFilter([ '**', '!content/index.md' ]) )
       .pipe( getFront() )
+      .pipe( addSlug() )
       // highlight blocks in markdown
       .pipe( highlightCodeBlock() )
       .pipe( markdown() )

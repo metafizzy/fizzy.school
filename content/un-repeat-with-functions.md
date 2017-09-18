@@ -1,5 +1,6 @@
 ---
 title: Un-repeat with functions
+description: Learn how to use a function to perform same code over multiple things.
 layout: lesson
 problemText: Similar repeated code.
 solutionText: Using a function to perform same code over multiple things.

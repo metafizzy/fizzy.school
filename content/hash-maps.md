@@ -1,5 +1,6 @@
 ---
 title: Hash maps
+description: Look out for long, repetitive conditionals checking over the same value. Resolve by using a hash map. Set data in an list-like object and access values with variables.
 layout: lesson
 problemText: Long, repetitive conditionals checking over the same value.
 solutionText: Using a hash map. Set data in an list-like object and access values with variables.

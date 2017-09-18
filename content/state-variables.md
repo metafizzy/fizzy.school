@@ -1,6 +1,7 @@
 ---
 title: State variables
 layout: lesson
+description: Learn how to use a variable to keep track of state instead of checking the DOM.
 problemText: Checking if an element has a class.
 solutionText: Using a variable to keep track of state.
 problemCode: |

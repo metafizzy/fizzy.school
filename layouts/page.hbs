@@ -5,7 +5,11 @@
 
 <section class="main">
   <div class="container">
-    <h1>{{page.title}}</h1>
+    {{#if page.title}}
+      <h1>{{page.title}}</h1>
+    {{/if}}
+
+    <p>{{page.description}}</p>
 
 {{#block "main"}}{{/block}}
   </div>

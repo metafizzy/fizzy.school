@@ -1,5 +1,6 @@
 ---
 title: "Avoid jQuery's this"
+description: "jQuery's this seems convienent, but leads to quirky code. We can side-step issues  by replacing it."
 layout: lesson
 problemText: jQuery's <code>this</code> in <code>.each()</code> and event functions.
 solutionText: Using <code>.each()</code> element argument and <code>event.currentTarget</code>

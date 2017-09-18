@@ -1,5 +1,6 @@
 ---
 layout: page
+description: Lessons in JavaScript for anyone writing jQuery
 ---
 
 <div class="skinny-column big-blurb">

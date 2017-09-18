@@ -15,6 +15,7 @@ var site = {
   },
 };
 
+require('./tasks/assets')( site );
 require('./tasks/css')( site );
 require('./tasks/js')( site );
 require('./tasks/content')( site );

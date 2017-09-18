@@ -14,4 +14,28 @@
     <link rel="stylesheet" href="fizzy-school.css?1" />
   {{/if}}
 
+  {{! Twitter card }}
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@metafizzyco" />
+  <meta name="twitter:title" content="{{#if page.title}}{{page.title}} &middot; {{/if}}Fizzy school" />
+  {{! Facebook OpenGraph }}
+  <meta property="og:url" content="http://fizzy.school/{{@file.slug}}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{{#if page.title}}{{page.title}} &middot; {{/if}}Fizzy school" />
+  <meta property="og:site_name" content="Fizzy School" />
+  {{! blurb }}
+  {{#if page.description}}
+    <meta name="description" content="{{page.description}}" />
+    <meta name="twitter:description" content="{{page.description}}" />
+    <meta property="og:description" content="{{page.description}}" />
+  {{/if}}
+  {{! image }}
+  {{#if page.image}}
+    <meta name="twitter:image" content="{{page.image}}" />
+    <meta property="og:image" content="{{page.image}}" />
+  {{else}}
+    <meta name="twitter:image" content="http://fizzy.school/img/fizzy-school-thumbnail.png" />
+    <meta property="og:image" content="http://fizzy.school/img/fizzy-school-thumbnail.png" />
+  {{/if}}
+
 </head>

@@ -1,5 +1,6 @@
 ---
 title: Return early
+description: Look out for big code block within if blocks inside function. Resolve by using return to terminate function early.
 layout: lesson
 problemText: Big blocks of code within <code>if</code> blocks inside functions.
 solutionText: Using <code>return</code> to terminate the function early and moving the code out of the conditional to save indentation.
