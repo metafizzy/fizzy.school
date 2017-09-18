@@ -33,12 +33,6 @@ solutionCodePen: ff6ee1e664ebd2af70cde44f6f8db6fe
 
 <!-- html-in-md <div class="skinny-column"> -->
 
-## Benefits
-
-+ Using variables for jQuery objects exposes you to the concept of variables
-+ Variables are easier to lint and catch bugs
-+ Better performance, removing excess function calls and DOM selecting
-
 ## Lesson
 
 jQuery's foundational unit is the jQuery selection.

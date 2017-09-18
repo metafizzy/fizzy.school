@@ -36,12 +36,6 @@ solutionCodePen: d67e7c02eb06e34677b3008bb2a45a6f
 
 <!-- html-in-md <div class="skinny-column"> -->
 
-## Benefits
-
-+ Simpler code by removing HTML structure from JS
-+ Abstracted code easier to re-use
-+ Only act upon one element, rather than acting upon all the potential elements
-
 ## Lesson
 
 jQuery makes it so easy to read and manipulate the DOM that developers are led to use the DOM for state. What do I mean by _state_? State is the current condition of the site. Which button is selected? Is the modal open? Has the request finished loading? All these questions are being asked about the site's state.

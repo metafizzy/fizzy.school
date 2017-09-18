@@ -42,10 +42,6 @@ solutionCodePen: 8ea66d113c84f109143e3f0e8ebcf74b
 
 <!-- html-in-md <div class="skinny-column"> -->
 
-## Benefits
-
-Readability: removing indentation makes code easier to read and better separates two behaviors.
-
 ## Lesson
 
 Indentation allow us to visually see a block of code as a group. Ideally, we could write especially clean and straight-forward code that never has more than 2-3 levels of indentation. Keeping indentation level low makes code more linear. Each level of indentation means you need to keep track of more of the code's context in your head. The fewer nests of indentation means less things to keep track of.

@@ -32,11 +32,6 @@ solutionCodePen: 200711f375d97a12eec816abaec5fc50
 
 <!-- html-in-md <div class="skinny-column"> -->
 
-## Benefits
-
-+ Clean up code
-+ Learn how to leverage bracket notation with objects
-
 ## Lesson
 
 Programming is largely about abstractions. Long strings of text and big concepts can be reduced to wee variables, which are easier to both read and manipulate in the code. But ultimately, the goal of programming is work with humans, who live outside the code. They prefer the original, fully-expanded strings and concepts.
