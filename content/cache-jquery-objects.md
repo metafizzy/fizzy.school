@@ -30,9 +30,12 @@ solutionCodePen: ff6ee1e664ebd2af70cde44f6f8db6fe
 ---
 
 <p data-height="500" data-theme-id="dark" data-slug-hash="ff6ee1e664ebd2af70cde44f6f8db6fe" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="jQuery selections 2" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/ff6ee1e664ebd2af70cde44f6f8db6fe/">jQuery selections 2</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 <!-- html-in-md <div class="skinny-column"> -->
+
+## Video
+
+<!-- html-in-md {{> lesson-video youtubeSlug="sN4QyBIPTv4" }} -->
 
 ## Lesson
 
@@ -94,7 +97,7 @@ $ === jQuery
 // => true
 ```
 
-jQuery's code provides two names for its main function, `jQuery` and `$`. The `$` dollar sign is just to save code for convienence
+jQuery's code provides two names for its main function, `jQuery` and `$`. The `$` dollar sign is just to save code for convenience
 
 We can rewrite the selection with the `jQuery` name:
 
@@ -196,3 +199,5 @@ Caching jQuery objects is the number thing I look for when refactoring code. It'
 So take another look at your jQuery selections. Any of the same selections that occur multiple times should be moved out and cached as variables. It's an easy improvement, and it can be the first step toward learning an even bigger concept: thinking with variables. More on that in the next lesson: [State variables](state-variables).
 
 <!-- html-in-md </div> -->
+
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>

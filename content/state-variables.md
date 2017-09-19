@@ -1,7 +1,7 @@
 ---
 title: State variables
 layout: lesson
-description: Learn how to use a variable to keep track of state instead of checking the DOM.
+description: Learn how to use variables to keep track of state instead of checking the DOM.
 problemText: Checking if an element has a class.
 solutionText: Using a variable to keep track of state.
 problemCode: |
@@ -31,11 +31,13 @@ problemCodePen: f196426516f0a312b0ce45633af346e9
 solutionCodePen: d67e7c02eb06e34677b3008bb2a45a6f
 ---
 
-
-
 <p data-height="300" data-theme-id="dark" data-slug-hash="d67e7c02eb06e34677b3008bb2a45a6f" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="State variables - modal - after" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/d67e7c02eb06e34677b3008bb2a45a6f/">State variables - modal - after</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 
 <!-- html-in-md <div class="skinny-column"> -->
+
+## Video
+
+<!-- html-in-md {{> lesson-video youtubeSlug="qix5ICRv3DI" }} -->
 
 ## Lesson
 
