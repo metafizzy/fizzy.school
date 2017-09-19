@@ -9,12 +9,30 @@
 
     {{#with page}}
       {{> lesson-topper}}
+
+      {{#if resolveCodepen}}
+        <h2>Demo</h2>
+
+        {{> codepen-embed codepenSlug=resolveCodepen }}
+      {{/if}}
+
+      {{#if youtubeSlug}}
+        <h2>Video</h2>
+
+        {{> lesson-video }}
+      {{/if}}
+
     {{/with}}
 
+    <div class="skinny-column">
+      <h2>Lesson</h2>
 {{#block "main"}}{{/block}}
+    </div>
   </div>
 </section>
 
 {{> site-footer}}
+
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 {{> html-foot}}

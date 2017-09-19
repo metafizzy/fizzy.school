@@ -36,7 +36,7 @@ problemCode: |
     $activeButton3 = $( this );
     $activeButton3.addClass('is-active');
   });
-solutionCode: |
+resolveCode: |
   // use .each() to call function for each button row
   $('.button-row').each( function() {
     var $buttonRow = $( this );
@@ -50,16 +50,11 @@ solutionCode: |
       $activeButton.addClass('is-active');
     });
   });
-problemCodePen: 483afa257e21af6be748a84257562576
-solutionCodePen: c713d68c0d6c21131635d98ac3bf76fb
+problemCodepen: YQObEd
+resolveCodepen: EXezEQ
+codepenTitle: Button rows - each function
+codepenHeight: 350
 ---
-
-<p data-height="350" data-theme-id="dark" data-slug-hash="c713d68c0d6c21131635d98ac3bf76fb" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="button rows 2" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/c713d68c0d6c21131635d98ac3bf76fb/">button rows 2</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-<!-- html-in-md <div class="skinny-column"> -->
-
-## Lesson
 
 With HTML, the code you write has a direct correlation to what you see in a browser. If you code three `<button>` elements, then your page will have three buttons.
   
@@ -73,7 +68,7 @@ With HTML, the code you write has a direct correlation to what you see in a brow
 
 This one-to-one mapping makes HTML approachable, establishing it as the first language web developers learn. Repeated code is essential to how HTML works.
 
-But with JavaScript, repeated code may not be necessary. Whereas HTML requires multiple elements to be represented in the code, JavaScript can use the same code over multiple elements. You're already familar with this kind of abstraction working with CSS. A single CSS style can be applied to multiple matching elements.
+But with JavaScript, repeated code may not be necessary. Whereas HTML requires multiple elements to be represented in the code, JavaScript can use the same code over multiple elements. You're already familiar with this kind of abstraction working with CSS. A single CSS style can be applied to multiple matching elements.
 
 Our example deals with a button row with a single active button. Clicking a button will the change active button in the row.
 
@@ -217,7 +212,7 @@ initButtonRow('.button-row2');
 initButtonRow('.button-row3');
 ```
 
-<!-- html-in-md {{> edit-codepen codepenSlug="e012ea84c5aab0d8d9344cfb6a0b70a8" }} -->
+<!-- html-in-md {{> edit-codepen codepenSlug="EwayEY" }} -->
 
 This code has two parts.
 
@@ -231,6 +226,4 @@ With this vanilla function, it's clearer how the same function is used multiple 
 
 You can use either pattern: jQuery's `.each()` method, or vanilla functions. When working with jQuery objects, `.each()` is a good fit. But you can always write your own vanilla functions.
 
-What's important is that you understand how to use functions to un-repeat your code. You don't need to repeat blocks of code like do you with HTML. In JavaScript, the same behavior can be applied to multiple elements. By reducing the amount of JavaScript you write, you make it more managable and more resilient.
-
-<!-- html-in-md </div> -->
+What's important is that you understand how to use functions to un-repeat your code. You don't need to repeat blocks of code like do you with HTML. In JavaScript, the same behavior can be applied to multiple elements. By reducing the amount of JavaScript you write, you make it more manageable and more resilient.

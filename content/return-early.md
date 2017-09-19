@@ -18,7 +18,7 @@ problemCode: |
     }
     return $tab;
   }
-solutionCode: |
+resolveCode: |
   function getTab( $link ) {
     var id = $link.attr('data-id');
     // check if tab exists
@@ -34,8 +34,8 @@ solutionCode: |
     // ...
     return $tab;
   }
-problemCodePen: ec1122e3eae8e58b96dbe975d68db987
-solutionCodePen: 8ea66d113c84f109143e3f0e8ebcf74b
+problemCodepen: ec1122e3eae8e58b96dbe975d68db987
+resolveCodepen: 8ea66d113c84f109143e3f0e8ebcf74b
 ---
 
 <p data-height="500" data-theme-id="dark" data-slug-hash="8ea66d113c84f109143e3f0e8ebcf74b" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="tab gallery - no early return" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/8ea66d113c84f109143e3f0e8ebcf74b/">tab gallery - no early return</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>

@@ -14,7 +14,7 @@ problemCode: |
       $toggleButton.text('View more');
     }
   });
-solutionCode: |
+resolveCode: |
   // use state variable to keep track
   var isModalOpen = false;
 
@@ -27,19 +27,11 @@ solutionCode: |
       $toggleButton.text('View more');
     }
   });
-problemCodePen: f196426516f0a312b0ce45633af346e9
-solutionCodePen: d67e7c02eb06e34677b3008bb2a45a6f
+problemCodepen: f196426516f0a312b0ce45633af346e9
+resolveCodepen: d67e7c02eb06e34677b3008bb2a45a6f
+codepenTitle: Modal - state variables
+youtubeSlug: qix5ICRv3DI
 ---
-
-<p data-height="300" data-theme-id="dark" data-slug-hash="d67e7c02eb06e34677b3008bb2a45a6f" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="State variables - modal - after" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/d67e7c02eb06e34677b3008bb2a45a6f/">State variables - modal - after</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-
-<!-- html-in-md <div class="skinny-column"> -->
-
-## Video
-
-<!-- html-in-md {{> lesson-video youtubeSlug="qix5ICRv3DI" }} -->
-
-## Lesson
 
 jQuery makes it so easy to read and manipulate the DOM that developers are led to use the DOM for state. What do I mean by _state_? State is the current condition of the site. Which button is selected? Is the modal open? Has the request finished loading? All these questions are being asked about the site's state.
 
@@ -135,7 +127,7 @@ Let's look at another example. This time, we're not just dealing with a simple o
       $swatchGroup.addClass( selectedColor );
     });
     ```
-    <!-- html-in-md {{> edit-codepen codepenSlug="938d5487859e2a3810dc9f23e94fd96c"}} -->
+    <!-- html-in-md {{> edit-codepen codepenSlug="BRXMZV"}} -->
   </div>
   <div class="duo__cell code-compare__yay">
     ``` js
@@ -147,11 +139,11 @@ Let's look at another example. This time, we're not just dealing with a simple o
       $swatchGroup.addClass( selectedColor );
     });
     ```
-    <!-- html-in-md {{> edit-codepen codepenSlug="2c365670c217f7b3266c0c8e7b95d22f"}} -->
+    <!-- html-in-md {{> edit-codepen codepenSlug="LywqQW"}} -->
   </div>
 </div>
 
-<p data-height="300" data-theme-id="dark" data-slug-hash="2c365670c217f7b3266c0c8e7b95d22f" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="Color buttons - state variable" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/2c365670c217f7b3266c0c8e7b95d22f/">Color buttons - state variable</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<!-- html-in-md {{> codepen-embed codepenSlug="LywqQW" codepenTitle="Color buttons - state variable" codepenHeight="300" }} -->
 
 <!-- html-in-md <div class="skinny-column"> -->
 
@@ -184,7 +176,3 @@ Now this code has no reference to the colors used in the HTML. You can add, remo
 That's what state variables are all about. They allow you to keep your HTML structure out of your JavaScript. So you can think of the JavaScript just as its behavior, not as the content its works with.
 
 These are simple examples, but their lessons are important. Up until now, you likely have thought of writing JavaScript in terms of what's on the page. By using variables, you are opening a new door in understanding JavaScript. It's not just what's on the page, but what's inside your program.
-
-<!-- html-in-md </div> -->
-
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>

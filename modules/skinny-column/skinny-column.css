@@ -9,22 +9,6 @@
 
 .skinny-column a { text-decoration: underline; }
 
-.skinny-column h2 {
-  position: relative;
-  padding-top: 20px;
-}
-
-.skinny-column h2:before {
-  content: '';
-  display: block;
-  position: relative;
-  top: -20px;
-  height: 4px;
-  width: 100%;
-  background: #222;
-  border-radius: 2px;
-}
-
 .theme--light .skinny-column h2:before {
   background: #EEE;
 }

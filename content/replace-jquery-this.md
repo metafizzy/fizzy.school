@@ -1,6 +1,6 @@
 ---
 title: "Replace jQuery's this"
-description: "jQuery's this seems convienent, but leads to quirky code. We can side-step issues  by replacing it."
+description: "jQuery's this seems convenient, but leads to quirky code. We can side-step issues  by replacing it."
 layout: lesson
 problemText: jQuery's <code>this</code> in <code>.each()</code> and event functions.
 solutionText: Using <code>.each()</code> element argument and <code>event.currentTarget</code>
@@ -18,7 +18,7 @@ problemCode: |
       $activeButton.addClass('is-active');
     });
   });
-solutionCode: |
+resolveCode: |
   // replacing 'this'
   $('.button-row').each( function( i, buttonRow ) {
     // .each() element argument
@@ -32,17 +32,15 @@ solutionCode: |
       $activeButton.addClass('is-active');
     });
   });
-problemCodePen: 483afa257e21af6be748a84257562576
-solutionCodePen: c713d68c0d6c21131635d98ac3bf76fb
+problemCodepen: EXezEQ
+resolveCodepen: eGZZQZ
+codepenTitle: Button rows - no jQuery this
+codepenHeight: 350
 ---
 
-<!-- html-in-md <div class="skinny-column"> -->
+In the [previous lesson on functions](un-repeat-with-functions), we used `this` within both the `.each()` and event callback functions. In these contexts, jQuery provides `this` as a convenient keyword for individual elements being acted upon. As you continue to write jQuery, you grow so accustomed to using `this`, that you might not realize how weird it is.
 
-## Lesson
-
-In the [previous lesson on functions](un-repeat-with-functions), we used `this` within both the `.each()` and event callback functions. In these contexts, jQuery provides `this` as a convienent keyword for individual elements being acted upon. As you continue to write jQuery, you grow so accostumed to using `this`, that you might not realize how weird it is.
-
-Within the initial example code, `this` represents two different sets of elements. Because the intial example uses [jQuery object variables](cache-jquery-objects), we can better recognize these elements as `$buttonRow` and `$activeButton`. Writing the example without variables, we can see how confusing `this` appears.
+Within the initial example code, `this` represents two different sets of elements. Because the initial example uses [jQuery object variables](cache-jquery-objects), we can better recognize these elements as `$buttonRow` and `$activeButton`. Writing the example without variables, we can see how confusing `this` appears.
 
 ``` js
 $('.button-row').each( function() {
@@ -130,7 +128,7 @@ buttonRow.addEventListener( 'click', function() {
 
 This is all to say that jQuery's use of `this` in event listeners and `.each()` is not improper, but it is quirky. It doesn't have the similar meaning of _self_, but a special meaning that's particular to one small facet of browser JavaScript.
 
-We can allievate ourselves from the quirkiness of jQuery's `this` by using other jQuery features.
+We can alleviate ourselves from the quirkiness of jQuery's `this` by using other jQuery features.
 
 ## .each() element argument
 
@@ -210,6 +208,4 @@ $('.button-row').each( function( i, buttonRow ) {
 
 ## Wrap up
 
-`this` in `.each()` and event listeners seems convienent, but leads to quirky code. We can side-step issues with jQuery's `this` by replacing it with arguments.
-
-<!-- html-in-md </div> -->
+`this` in `.each()` and event listeners seems convenient, but leads to quirky code. We can side-step issues with jQuery's `this` by replacing it with arguments.

@@ -16,7 +16,7 @@ problemCode: |
       stateName = 'New Jersey';
     }
   });
-solutionCode: |
+resolveCode: |
   var stateNames = {
     DE: 'Delaware',
     MA: 'Massachusetts',
@@ -25,21 +25,16 @@ solutionCode: |
   };
 
   var stateName = stateNames[ value ];
-problemCodePen: e6366654a1566325c6c471adf2a9a2a2
-solutionCodePen: 200711f375d97a12eec816abaec5fc50
+problemCodepen: KqBPyX
+resolveCodepen: wexwQd
+codepenTitle: State select - hash map
 ---
-
-<p data-height="300" data-theme-id="dark" data-slug-hash="200711f375d97a12eec816abaec5fc50" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="state select 2" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/200711f375d97a12eec816abaec5fc50/">state select 2</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-
-<!-- html-in-md <div class="skinny-column"> -->
-
-## Lesson
 
 Programming is largely about abstractions. Long strings of text and big concepts can be reduced to wee variables, which are easier to both read and manipulate in the code. But ultimately, the goal of programming is work with humans, who live outside the code. They prefer the original, fully-expanded strings and concepts.
 
-The example above deals with this dilemma. We have a `<select>` menu for some U.S. states. The menu uses the states abbreviations. When a state is selected, its corresponding full state name is displayed in a human-readble sentence.
+The example above deals with this dilemma. We have a `<select>` menu for some U.S. states. The menu uses the states abbreviations. When a state is selected, its corresponding full state name is displayed in a human-readable sentence.
 
-The initial example gets the state name via a chain of conditionals. It checks the value of a `value` variable, which requires a separate conditional and assignment for each abbrievation.
+The initial example gets the state name via a chain of conditionals. It checks the value of a `value` variable, which requires a separate conditional and assignment for each abbreviation.
 
 ``` js
 if ( value == 'DE' ) {
@@ -70,7 +65,7 @@ var stateNames = {
 };
 ```
 
-This object, stored as a variable `stateNames`, is a list of the states. The object consist of multiple properties, the states. Each property has a key, the state abbrieviation, and a value, the state name. On its own, it's just data. What makes it useful is that we access the state names programmatically.
+This object, stored as a variable `stateNames`, is a list of the states. The object consist of multiple properties, the states. Each property has a key, the state abbreviation, and a value, the state name. On its own, it's just data. What makes it useful is that we access the state names programmatically.
 
 To access a property value, you may typically dot notation
 
@@ -79,7 +74,7 @@ stateNames.DE;
 // => 'Delaware'
 ```
 
-But, in our example, we don't want to explicitly write out the key (the state's abbrieviation in this case). We want to get the property that matches another variable. To do so, we use bracket notation.
+But, in our example, we don't want to explicitly write out the key (the state's abbreviation in this case). We want to get the property that matches another variable. To do so, we use bracket notation.
 
 ``` js
 stateNames['DE'];
@@ -161,7 +156,7 @@ var commonwealths = {
 var isCommonwealth = commonwealths[ value ];
 ```
 
-Whereas in the previous example we used the value of the matched property, here we are checking if the property is in the map & _truthy_. If there is no match for the variable, like for `commonwealths['NJ']`, then its returned value is a falsy _undefined_.
+Whereas in the previous example we used the value of the matched property, here we are checking if the property is in the map & _truthy_. If there is no match for the variable, like for `commonwealths['NJ']`, then its returned value is a falsey _undefined_.
 
 This pattern is more abstract than a straight set of conditionals. But the benefit is greater readability. Parsing complex conditionals is difficult. Using a hash map reduces the complexity by asking _Is this value in the list?_
 
@@ -224,5 +219,3 @@ var operation = operations[ operator ];
 // call that function
 var resultNumber = operation( a, b );
 ```
-
-<!-- html-in-md </div> -->

@@ -11,7 +11,7 @@ problemCode: |
     $('.gallery__title').text( $( this ).text() );
     $('.gallery__caption').text( $( this ).attr('title') );
   });
-solutionCode: |
+resolveCode: |
   // get jQuery objects once
   var $galleryImage = $('.gallery__image');
   var $galleryTitle = $('.gallery__title');
@@ -25,19 +25,12 @@ solutionCode: |
     $galleryTitle.text( $link.text() );
     $galleryCaption.text( $link.attr('title') );
   });
-problemCodePen: ac902dc40335678393a2c9aef5356c9b
-solutionCodePen: ff6ee1e664ebd2af70cde44f6f8db6fe
+problemCodepen: GmVMWQ
+resolveCodepen: qjLWJV
+codepenTitle: Photo gallery - cache jQuery objects
+codepenHeight: 500
+youtubeSlug: sN4QyBIPTv4
 ---
-
-<p data-height="500" data-theme-id="dark" data-slug-hash="ff6ee1e664ebd2af70cde44f6f8db6fe" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="jQuery selections 2" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/ff6ee1e664ebd2af70cde44f6f8db6fe/">jQuery selections 2</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-
-<!-- html-in-md <div class="skinny-column"> -->
-
-## Video
-
-<!-- html-in-md {{> lesson-video youtubeSlug="sN4QyBIPTv4" }} -->
-
-## Lesson
 
 jQuery's foundational unit is the jQuery selection.
 
@@ -197,7 +190,3 @@ One note: `$('.photo-list')` and `$('.reset-button')` are not cached as variable
 Caching jQuery objects is the number thing I look for when refactoring code. It's not just about a little performance boost. By using jQuery object variables, you demonstrate several key concepts with JavaScript: that the jQuery selection is not magic syntax, but a function call, and that you can store the result of a functions as variables, and those variables can be re-used around your code.
 
 So take another look at your jQuery selections. Any of the same selections that occur multiple times should be moved out and cached as variables. It's an easy improvement, and it can be the first step toward learning an even bigger concept: thinking with variables. More on that in the next lesson: [State variables](state-variables).
-
-<!-- html-in-md </div> -->
-
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>

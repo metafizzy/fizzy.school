@@ -11,23 +11,18 @@ problemCode: |
     var $activeTab = $('.gallery__tab-container' + number +
       ' .gallery__tab.is-active');
   });
-solutionCode: |
+resolveCode: |
   $('.gallery').each( function( index, gallery ) {
     var $gallery = $( gallery );
     var $nav = $gallery.find('.gallery__nav');
     var $tabs = $gallery.find('.gallery__tab');
     var $activeTab = $tabs.filter('.is-active');
   });
-problemCodePen: 5847902f662647c3d3356fe87d2087fc
-solutionCodePen: 58617951bab00eee6b4f311963479704
+problemCodepen: yXwXpe
+resolveCodepen: xrBLqa
+codepenTitle: Three galleries - simplified selectors
+codepenHeight: 500
 ---
-
-<p data-height="500" data-theme-id="dark" data-slug-hash="58617951bab00eee6b4f311963479704" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="Three galleries - simplified selectors" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/58617951bab00eee6b4f311963479704/">Three galleries - simplified selectors</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-<!-- html-in-md <div class="skinny-column"> -->
-
-## Lesson
 
 jQuery makes selecting elements with CSS syntax so approachable, that it obscures the path to learning other features.
 
@@ -73,7 +68,7 @@ $('.gallery).each( function() {
 
 Now then, how do we go about selecting each gallery's nav and active tab?
 
-If you're well-accostumed to selecting elements with CSS selector strings, you build a selector string. So you may add numbered classes in the HTML. The first gallery gets `gallery__nav1` and `gallery__tab-container1`. Second gallery gets `gallery__nav2` `tab__container2`, as so forth
+If you're well-accustomed to selecting elements with CSS selector strings, you build a selector string. So you may add numbered classes in the HTML. The first gallery gets `gallery__nav1` and `gallery__tab-container1`. Second gallery gets `gallery__nav2` `tab__container2`, as so forth
 
 Then back in the JavaScript, you could build the selector string by combining a variable with a string, using the index argument from the each function
 
@@ -220,5 +215,3 @@ Not only can you remove numbered classes from the JS, you can remove them from  
 ## Wrap up
 
 So watch out for numbered classes. They may seem like a suitable solution for selecting elements within functions, but you don't need them. You have already learned to cache your jQuery objects. This concept just builds upon that, taking those selections and creating new ones from them with traversing methods.
-
-<!-- html-in-md </div> -->
