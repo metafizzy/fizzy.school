@@ -1,5 +1,5 @@
 ---
-title: "Avoid jQuery's this"
+title: "Replace jQuery's this"
 description: "jQuery's this seems convienent, but leads to quirky code. We can side-step issues  by replacing it."
 layout: lesson
 problemText: jQuery's <code>this</code> in <code>.each()</code> and event functions.
