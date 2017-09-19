@@ -8,27 +8,11 @@
 
 .theme--light .site-header { background: #EEE; }
 
-.site-header__flexer {
-  display: -webkit-box;
-  display: flex;
-}
-
-.site-header__cell {
-  margin-right: 20px;
-}
-
-.site-header__cell--expand {
-  -webkit-box-flex: 1;
-  flex-grow: 1;
-}
-
-.site-header__cell:last-child {
-  margin-right: 0;
-}
-
 .site-header .witchie-logo {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
+  float: left;
+  margin: 0 10px 10px 0;
 }
 
 .site-header__title {
@@ -37,7 +21,7 @@
 }
 
 .site-header__tagline {
-  margin: 0;
+  margin: 0 0 20px;
 }
 
 .site-header__link:hover * {
@@ -58,16 +42,16 @@
 }
 
 .site-header .metafizzy-logo {
-  width: 35px;
-  height: 45px;
+  width: 23px;
+  height: 30px;
 }
 
 .site-header .metafizzy-logo__body { fill: #D26; }
 .site-header .metafizzy-logo__stripes { display: none; }
 
 .site-header .metafizzy-wordmark {
-  width: 140px;
-  height: 40px;
+  width: 105px;
+  height: 30px;
   stroke: #D26;
 }
 
@@ -82,3 +66,40 @@
   stroke: #333;
 }
 
+@media (min-width: 768px) {
+  .site-header__flexer {
+    display: -webkit-box;
+    display: flex;
+  }
+
+  .site-header__cell {
+    margin-right: 20px;
+  }
+
+  .site-header__cell--expand {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+  }
+
+  .site-header__cell:last-child {
+    margin-right: 0;
+  }
+
+  .site-header .witchie-logo {
+    float: none;
+    width: 100px;
+    height: 100px;
+    margin: 0;
+  }
+
+  .site-header .metafizzy-logo {
+    width: 35px;
+    height: 45px;
+  }
+
+  .site-header .metafizzy-wordmark {
+    width: 140px;
+    height: 40px;
+  }
+
+}

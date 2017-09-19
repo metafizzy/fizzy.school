@@ -27,9 +27,9 @@
 
 .witchie-logo__label {
   position: absolute;
-  width: 160px;
-  left: -30px;
-  top: 110px;
+  width: 140px;
+  left: 0px;
+  top: 65px;
   padding: 5px 0;
   background: white;
   border-radius: 5px;
@@ -49,4 +49,12 @@
 .witchie-logo:hover .witchie-logo__label {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .witchie-logo__label {
+    width: 160px;
+    left: -30px;
+    top: 110px;
+  }
 }

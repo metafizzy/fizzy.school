@@ -8,7 +8,3 @@
 }
 
 .skinny-column a { text-decoration: underline; }
-
-.theme--light .skinny-column h2:before {
-  background: #EEE;
-}

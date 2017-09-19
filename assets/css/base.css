@@ -3,7 +3,7 @@
 html {
   font-family: Texta, sans-serif;
   line-height: 1.45;
-  font-size: 20px;
+  font-size: 17px;
   background: #222;
   color: #F5F5F5;
 }
@@ -39,8 +39,8 @@ a:hover {
 /* ---- headers ---- */
 
 h1 {
-  font-size: 3.0rem;
-  margin: 30px 0;
+  font-size: 2.0rem;
+  margin: 20px 0;
   line-height: 1.1;
 }
 
@@ -49,26 +49,31 @@ h1 a:visited { color: #D26; }
 h1 a:hover { color: #19F; }
 
 h2 {
-  font-size: 2.0rem;
-  margin: 60px 0 40px;
+  font-size: 1.8rem;
+  margin: 40px 0 20px;
   line-height: 1.1;
   position: relative;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 h2:before {
   content: '';
   display: block;
   position: relative;
-  top: -20px;
+  top: -10px;
   height: 4px;
   width: 100%;
   background: #222;
   border-radius: 2px;
 }
 
+.theme--light h2:before {
+  background: #EEE;
+}
+
+
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .duo__cell > h3:first-child {
@@ -100,7 +105,7 @@ hr:before {
 pre, code {
   background: #222;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .theme--light pre,
@@ -129,4 +134,33 @@ pre code {
 
 button {
   font-family: inherit;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: 3.0rem;
+    margin: 30px 0;
+  }
+
+  h2 {
+    font-size: 2.0rem;
+    margin: 60px 0 40px;
+    padding-top: 20px;
+  }
+
+  h2:before {
+    top: -20px;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  pre, code {
+    font-size: 16px;
+  }
 }
