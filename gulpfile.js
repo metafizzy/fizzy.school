@@ -24,6 +24,7 @@ require('./tasks/content')( site );
 
 gulp.task( 'default', [
   'content',
+  'assets',
   'css',
   'js',
 ]);

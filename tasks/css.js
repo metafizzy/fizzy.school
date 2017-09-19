@@ -5,15 +5,15 @@ var getGlobPaths = require('./utils/get-glob-paths');
 var cssSrc = [
   'bower_components/normalize-css/normalize.css',
   'bower_components/flickity/dist/flickity.css',
-  'css/fonts.css',
-  'css/base.css',
+  'assets/css/fonts.css',
+  'assets/css/base.css',
   'modules/*/**/*.css',
 ];
 
 gulp.task( 'css', function() {
   gulp.src( cssSrc )
     .pipe( concat('fizzy-school.css') )
-    .pipe( gulp.dest('build') );
+    .pipe( gulp.dest('build/css') );
 });
 
 module.exports = function( site ) {

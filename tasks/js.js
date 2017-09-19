@@ -41,11 +41,11 @@ var jsSrc = [
   'bower_components/infinite-scroll/js/core.js',
   'bower_components/infinite-scroll/js/scroll-watch.js',
   // boilerplate
-  'js/boilerplate.js',
+  'assets/js/boilerplate.js',
   // modules
   'modules/*/**/*.js',
   // init
-  'js/init.js',
+  'assets/js/init.js',
 ];
 
 // concat & minify js
@@ -53,7 +53,7 @@ gulp.task( 'js', function() {
   gulp.src( jsSrc )
     .pipe( uglify() )
     .pipe( concat('fizzy-school.min.js') )
-    .pipe( gulp.dest('build') );
+    .pipe( gulp.dest('build/js') );
 });
 
 module.exports = function( site ) {
