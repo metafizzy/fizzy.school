@@ -6,5 +6,13 @@
   <script src="{{@file.rootPath}}js/fizzy-school.min.js?1"></script>
 {{/if}}
 
+{{#unless dev}}
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-58739927-8','auto');ga('send','pageview');
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+{{/unless}}
+
 </body>
 </html>
