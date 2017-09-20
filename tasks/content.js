@@ -9,10 +9,10 @@ var hbLayouts = require('handlebars-layouts');
 var htmlInMd = require('./utils/html-in-md');
 var transfob = require('transfob');
 var path = require('path');
-var gulpFilter = require('gulp-filter');
-var addSlug = require('./utils/add-slug');
+var addFileProperties = require('./utils/add-file-properties');
 
-var contentSrc = 'content/*.md';
+var lessonsSrc = 'content/*.md';
+var pagesSrc = 'content/*.html';
 var layoutsSrc = 'layouts/*.hbs';
 var partialsSrc = [ 'modules/*/**/*.hbs' ];
 
@@ -30,7 +30,7 @@ var lessonList = [
 gulp.task( 'lessons', function() {
   lessons = [];
 
-  return gulp.src( contentSrc )
+  return gulp.src( lessonsSrc )
     .pipe( getFront() )
     .pipe( transfob( function( file, enc, next ) {
       // only lessons
@@ -49,21 +49,20 @@ gulp.task( 'lessons', function() {
 
 module.exports = function( site ) {
 
-  gulp.task( 'content-index', [ 'lessons' ], function() {
-    return gulp.src('content/index.md')
+  gulp.task( 'content-pages', [ 'lessons' ], function() {
+    return gulp.src('content/*.html')
       .pipe( getFront() )
+      .pipe( addFileProperties() )
       .pipe( extendLayout() )
       .pipe( getHandlebars( site ) )
       .pipe( highlightCodeBlock() )
-      .pipe( rename({ extname: '.html' }) )
       .pipe( gulp.dest('build') );
   });
 
   gulp.task( 'content-lessons', function() {
     return gulp.src('content/*.md')
-      .pipe( gulpFilter([ '**', '!content/index.md' ]) )
       .pipe( getFront() )
-      .pipe( addSlug() )
+      .pipe( addFileProperties() )
       // highlight blocks in markdown
       .pipe( highlightCodeBlock() )
       .pipe( markdown() )
@@ -77,11 +76,12 @@ module.exports = function( site ) {
   });
 
   gulp.task( 'content', [
+    'content-pages',
     'content-lessons',
-    'content-index'
   ]);
 
-  site.watch( contentSrc, [ 'content' ] );
+  site.watch( pagesSrc, [ 'content-pages' ] );
+  site.watch( lessonsSrc, [ 'content-lessons' ] );
   site.watch( layoutsSrc, [ 'content' ] );
   site.watch( partialsSrc, [ 'content' ] );
 };

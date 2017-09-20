@@ -11,7 +11,7 @@
       <link rel="stylesheet" href="../{{this}}" />
     {{/each}}
   {{else}}
-    <link rel="stylesheet" href="css/fizzy-school.css?1" />
+    <link rel="stylesheet" href="{{@file.rootPath}}css/fizzy-school.css?1" />
   {{/if}}
 
   {{! Twitter card }}
@@ -19,7 +19,7 @@
   <meta name="twitter:site" content="@metafizzyco" />
   <meta name="twitter:title" content="{{#if page.title}}{{page.title}} &middot; {{/if}}Fizzy school" />
   {{! Facebook OpenGraph }}
-  <meta property="og:url" content="http://fizzy.school/{{@file.slug}}" />
+  <meta property="og:url" content="http://fizzy.school/{{@file.url}}" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="{{#if page.title}}{{page.title}} &middot; {{/if}}Fizzy school" />
   <meta property="og:site_name" content="Fizzy School" />
