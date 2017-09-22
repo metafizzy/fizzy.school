@@ -181,6 +181,7 @@ This pattern is more abstract than a straight set of conditionals. But the benef
       resultNumber = a / b;
     }
     ```
+    <!-- html-in-md {{> edit-codepen codepenSlug="mBPgQr" }} -->
   </div>
   <div class="duo__cell code-compare__yay">
     ``` js
@@ -201,13 +202,13 @@ This pattern is more abstract than a straight set of conditionals. But the benef
 
     var resultNumber = operation( a, b );
     ```
+    <!-- html-in-md {{> edit-codepen codepenSlug="mwaJKG" }} -->
   </div>
 </div>
 
 <!-- html-in-md <div class="skinny-column"> -->
 
-<p data-height="300" data-theme-id="dark" data-slug-hash="28905ad8756fe1a4bb3033d70fed52a2" data-default-tab="result" data-user="desandro" data-embed-version="2" data-pen-title="Calculator" class="codepen">See the Pen <a href="https://codepen.io/desandro/pen/28905ad8756fe1a4bb3033d70fed52a2/">Calculator</a> by David DeSandro (<a href="https://codepen.io/desandro">@desandro</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+<!-- html-in-md {{> codepen-embed codepenSlug="mwaJKG" codepenTitle="Operator calculator - hash map" }} -->
 
 <p>This example is a simple calculator comprised of two input fields and an operator selector. Selecting an operator changes the calculation of the two numbers.</p>
 
