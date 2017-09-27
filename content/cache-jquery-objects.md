@@ -187,6 +187,6 @@ One note: `$('.photo-list')` and `$('.reset-button')` are not cached as variable
 
 ## Wrap up
 
-Caching jQuery objects is the number thing I look for when refactoring code. It's not just about a little performance boost. By using jQuery object variables, you demonstrate several key concepts with JavaScript: that the jQuery selection is not magic syntax, but a function call, and that you can store the result of a functions as variables, and those variables can be re-used around your code.
+Caching jQuery objects is the number one thing I look for when refactoring code. It's not just about a little performance boost. By using jQuery object variables, you demonstrate several key concepts with JavaScript: that the jQuery selection is not magic syntax, but a function call, and that you can store the result of a functions as variables, and those variables can be re-used around your code.
 
 So take another look at your jQuery selections. Any of the same selections that occur multiple times should be moved out and cached as variables. It's an easy improvement, and it can be the first step toward learning an even bigger concept: thinking with variables. More on that in the next lesson: [State variables](state-variables).
