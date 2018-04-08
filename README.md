@@ -54,7 +54,7 @@ JavaScript can be initialized for each element with `data-js` attribute.
 ```
 
 ``` js
-FizzySchool.['page-nav'] = function( elem ) {
+FizzySchool['page-nav'] = function( elem ) {
   // do something with elem
 };
 ```

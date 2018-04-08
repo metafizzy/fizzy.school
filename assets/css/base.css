@@ -103,6 +103,7 @@ hr:before {
 /* ---- pre, code ---- */
 
 pre, code {
+  font-family: Consolas, Menlo, monospace, monospace;
   background: #222;
   color: white;
   font-size: 14px;
