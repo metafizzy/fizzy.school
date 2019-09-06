@@ -81,7 +81,7 @@ $('.gallery').each( function( index ) {
 });
 ```
 
-These selectors work, but they're hard to read. Looking at them, you have to take a second to figure out how the variable works in the string. And this code hits upon a familiar problem: its relying on specific classes in the HTML. We already know that that the nav and activeTab elements exist with the group element. Using numbered classes is a hack.
+These selectors work, but they're hard to read. Looking at them, you have to take a second to figure out how the variable works in the string. And this code hits upon a familiar problem: its relying on specific classes in the HTML. We already know that the nav and activeTab elements exist with the group element. Using numbered classes is a hack.
 
 Let's fix this by removing these complicated selectors, and making use of the elements document structure.
 
