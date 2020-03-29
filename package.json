@@ -17,7 +17,11 @@
     "transfob": "^1.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf build && npx gulp",
+    "dev": "npx gulp dev",
+    "deploy": "netlify deploy --dir=build",
+    "deployProd": "netlify deploy --dir=build --prod"
   },
   "keywords": [],
   "author": "David DeSandro",
