@@ -1,7 +1,7 @@
 {
   "name": "fizzy.school",
-  "version": "0.1.0",
-  "description": "",
+  "version": "1.0.0",
+  "description": "_Lessons in JavaScript for anyone writing jQuery_. Site source.",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp": "^3.9.1",
@@ -21,5 +21,14 @@
   },
   "keywords": [],
   "author": "David DeSandro",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/metafizzy/fizzy.school.git"
+  },
+  "bugs": {
+    "url": "https://github.com/metafizzy/fizzy.school/issues"
+  },
+  "homepage": "https://fizzy.school"
 }

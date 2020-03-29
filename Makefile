@@ -1,5 +1,5 @@
 deploy:
-	surge build fizzy.school
+	netlify deploy --dir=build
 
 gulp:
 	gulp
