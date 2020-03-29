@@ -132,7 +132,7 @@ We can alleviate ourselves from the quirkiness of jQuery's `this` by using other
 
 ## .each() element argument
 
-[`.each()` provides two arguments for its function](http://api.jquery.com/each/), an index integer, and the current iteration's element. That element argument is the same thing as `this`.
+[`.each()` provides two arguments for its function](https://api.jquery.com/each/), an index integer, and the current iteration's element. That element argument is the same thing as `this`.
 
 ``` js
 // using this

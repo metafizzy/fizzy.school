@@ -80,7 +80,7 @@ Our example deals with a button row with a single active button. Clicking a butt
 </div>
 ```
 
-In the JS, clicking a button removes the active class from the active button, changes the active button to the clicked button, and adds the active class to that. `$activeButton` works both as a [cached jQuery object](cache-jquery-objects) and a [state variable](http://local/fizzy.school/build/state-variables).
+In the JS, clicking a button removes the active class from the active button, changes the active button to the clicked button, and adds the active class to that. `$activeButton` works both as a [cached jQuery object](cache-jquery-objects) and a [state variable](state-variables).
 
 ``` js
 var $buttonRow = $('.button-row');
