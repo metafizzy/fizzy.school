@@ -61,7 +61,7 @@ The end goal is to be able to click a nav item to change the tab and display the
 Let's code up some JavaScript! So we already know to [use a function so we don't repeat code](un-repeat-with-functions). We'll start by selecting all `.gallery` elements and calling each on that.
 
 ``` js
-$('.gallery).each( function() {
+$('.gallery').each( function() {
   // ...
 });
 ```
